@@ -3,10 +3,10 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="col-lg-3 ">
-
+        <div class="col-lg  ">
+            <h1>SILP</h1>
         </div>
-        <div class="sidebar-brand-text mx-3">SILP</div>
+
     </a>
 
     <!-- Divider -->
@@ -30,14 +30,17 @@
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Components</span>
+            <i class="fas fa-fw  fa-folder"></i>
+
+
+            <span>Data master barang</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Stock product</h6>
-                <a class="collapse-item" href="buttons.html">Product IN</a>
-                <a class="collapse-item" href="cards.html">Product OUT</a>
+                <h6 class="collapse-header">Data barang</h6>
+                <a class="collapse-item" href="buttons.html">Barang masuk</a>
+                <a class="collapse-item" href="cards.html">Barang keluar</a>
+                <a class="collapse-item" href="cards.html">Stok barang</a>
             </div>
         </div>
     </li>
@@ -45,14 +48,15 @@
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-            <i class="fas fa-fw fa-wrench"></i>
-            <span>Utilities</span>
+            <i class="fa fa-fw fa-file-invoice"></i>
+            <span>Data transaksi</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Custom Utilities:</h6>
-                <a class="collapse-item" href="utilities-color.html">Order</a>
-                <a class="collapse-item" href="utilities-border.html">Pre-order</a>
+                <h6 class="collapse-header">Data transaksi</h6>
+                <a class="collapse-item" href="utilities-color.html">Pemesanan barang</a>
+                <a class="collapse-item" href="utilities-color.html">Data supplier</a>
+
 
             </div>
         </div>
@@ -66,15 +70,26 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Pages</span>
+        <a class="nav-link" href="#" data-target="#collapsePages" aria-expanded="true" aria-controls="">
+            <i class="fa fa-fw  fa-print"></i>
+            <span>Laporan</span>
         </a>
-        <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
+    <li class="nav-item">
+        <a class="nav-link" href="#" data-target="#collapsePages" aria-expanded="true" aria-controls="">
+            <i class="fas fa-fw  fa-cog"></i>
+            <span>Setting</span>
+        </a>
 
-            </div>
-        </div>
+    </li>
+
+
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#" data-target="#collapsePages" aria-expanded="true" aria-controls="">
+            <i class="fas  fa-sign-out-alt fa-sm fa-fw mr-2 "></i>
+            <span>Logout</span>
+        </a>
+
     </li>
 
     <!-- Nav Item - Charts -->
