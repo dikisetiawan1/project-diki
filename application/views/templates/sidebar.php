@@ -38,9 +38,9 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Data barang</h6>
-                <a class="collapse-item" href="buttons.html">Barang masuk</a>
-                <a class="collapse-item" href="cards.html">Barang keluar</a>
-                <a class="collapse-item" href="cards.html">Stok barang</a>
+                <a class="collapse-item" href="<?= base_url("Databarang/barangmasuk"); ?>">Barang masuk</a>
+                <a class="collapse-item" href="<?= base_url("Databarang/barangkeluar"); ?>">Barang keluar</a>
+                <a class="collapse-item" href="<?= base_url("Databarang/stokbarang"); ?>">Stok barang</a>
             </div>
         </div>
     </li>
@@ -54,7 +54,7 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Data transaksi</h6>
-                <a class="collapse-item" href="utilities-color.html">Pemesanan barang</a>
+                <a class="collapse-item" href="<?= base_url("datatransaksi"); ?>">Pemesanan barang</a>
                 <a class="collapse-item" href="utilities-color.html">Data supplier</a>
 
 
