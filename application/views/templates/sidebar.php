@@ -3,11 +3,13 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="col-lg  ">
-            <h1>SILP</h1>
+        <div class="col-lg  mt-5    ">
+            <img src="/assets/img/pertiwi.png" style="width: 50px; height: 50px;" alt="logo pertiwi">
+            <h5 class="mt-3">SILP</h5>
         </div>
 
     </a>
+    <br>
 
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
@@ -70,7 +72,7 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link" href="#" data-target="#collapsePages" aria-expanded="true" aria-controls="">
+        <a class="nav-link" href="<?= base_url("LaporanBarang"); ?>" data-target="#collapsePages" aria-expanded="true" aria-controls="">
             <i class="fa fa-fw  fa-print"></i>
             <span>Laporan</span>
         </a>
