@@ -6,8 +6,8 @@
 
 
 <!-- Begin Page Content -->
-<div class="container-fluid">
-    <div class="row">
+<div class="container-fluid justify-content-center ">
+    <div class="row ">
         <div class="col-12">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -26,7 +26,7 @@
     <!-- Content Row -->
 
 
-    <div class="card shadow " style="height: 60%;">
+    <div class="card mx-auto  shadow d-flex align-items-center  " style="height: 60%; width:50%; ">
         <form action="index.php " method="get">
             <div class="row g-3 align-items-center mt-5 mb-2 justify-content-center">
                 <div class="col-auto">

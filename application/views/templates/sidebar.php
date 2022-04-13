@@ -4,7 +4,7 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="col-lg  mt-5    ">
-            <img src="/assets/img/pertiwi.png" style="width: 50px; height: 50px;" alt="logo pertiwi">
+            <img src="/assets/img/undraw_rocket.svg" style="width: 50px; height: 50px;" alt="logo pertiwi">
             <h5 class="mt-3">SILP</h5>
         </div>
 
@@ -16,7 +16,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item a active">
-        <a class="nav-link" href="<?= base_url("dashboard"); ?>">
+        <a class="nav-link" href="<?= base_url("admin/dashboard"); ?>">
             <i class="fas fa-fw fa-tachometer-alt "></i>
             <span>Dashboard</span></a>
     </li>
@@ -40,9 +40,9 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Data barang</h6>
-                <a class="collapse-item" href="<?= base_url("Databarang/barangmasuk"); ?>">Barang masuk</a>
-                <a class="collapse-item" href="<?= base_url("Databarang/barangkeluar"); ?>">Barang keluar</a>
-                <a class="collapse-item" href="<?= base_url("Databarang/stokbarang"); ?>">Stok barang</a>
+                <a class="collapse-item" href="<?= base_url("admin/barangmasuk"); ?>">Barang masuk</a>
+                <a class="collapse-item" href="<?= base_url("admin/barangkeluar"); ?>">Barang keluar</a>
+                <a class="collapse-item" href="<?= base_url("admin/stokbarang"); ?>">Stok barang</a>
             </div>
         </div>
     </li>
@@ -56,7 +56,7 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Data transaksi</h6>
-                <a class="collapse-item" href="<?= base_url("datatransaksi"); ?>">Pemesanan barang</a>
+                <a class="collapse-item" href="<?= base_url("admin/datatransaksi"); ?>">Pemesanan barang</a>
                 <a class="collapse-item" href="utilities-color.html">Data supplier</a>
 
 
@@ -72,14 +72,14 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link" href="<?= base_url("LaporanBarang"); ?>" data-target="#collapsePages" aria-expanded="true" aria-controls="">
+        <a class="nav-link" href="<?= base_url("admin/LaporanBarang"); ?>" data-target="#collapsePages" aria-expanded="true" aria-controls="">
             <i class="fa fa-fw  fa-print"></i>
             <span>Laporan</span>
         </a>
     <li class="nav-item">
         <a class="nav-link" href="#" data-target="#collapsePages" aria-expanded="true" aria-controls="">
-            <i class="fas fa-fw  fa-cog"></i>
-            <span>Setting</span>
+            <i class="fa fa-fw fa-unlock"></i>
+            <span>Ubah password</span>
         </a>
 
     </li>

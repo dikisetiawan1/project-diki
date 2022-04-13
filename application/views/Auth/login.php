@@ -27,7 +27,7 @@
         <!-- Outer Row -->
         <div class="row justify-content-center">
 
-            <div class="col-7">
+            <div class="col-5">
 
                 <div class="card o-hidden border-0 shadow-lg my-5">
                     <div class="card-body p-0">
@@ -37,19 +37,17 @@
                             <div class="col-lg">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Login First!</h1>
+                                        <h1 class="h4 text-gray-900 mb-1">PT. PERTIWI GROUP</h1>
+                                        <p class="mb-4">Sistem Inventory Logistik Pertiwi</p>
                                     </div>
-                                    <form class="user">
+                                    <form class="#" method="post" action="#">
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                                            <input type="text" name="username" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Username..">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                                            <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                                         </div>
-
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </a>
+                                        <button type="submit" class="btn btn-primary " style="width: 100%;">Login</button>
 
 
                                     </form>
@@ -57,9 +55,7 @@
                                     <div class="text-center">
                                         <a class="small" href="forgot-password.html">Forgot Password?</a>
                                     </div>
-                                    <div class="text-center">
-                                        <a class="small" href="register.html">Create an Account!</a>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
