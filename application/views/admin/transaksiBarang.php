@@ -19,24 +19,17 @@
         </div>
     </div>
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
+    <h1 class="h3 mb-4 text-gray-800">
+        <?= $title; ?>
+    </h1>
 
 
     <!-- Content Row -->
     <div class="row">
-        <div class="col-8">
-            <a href="<?= base_url('admin/barangmasuk/tambah') ?>" class="btn btn-primary mb-2" data-toggle="modal" data-target="#myModal">Tambah data barang</a>
-            <a href=" #" class="btn btn-warning mb-2 ml-1 pt-2 pb-3"><i class="fas fa-print"></i></a>
-            <a href="#" class="btn btn-success mb-2 ml-1 pt-2 pb-3 "><i class="fas fa-file-excel"></i></a>
-        </div>
-        <div class="col-4">
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success ml-2" type="submit">Search</button>
-            </form>
-        </div>
-    </div>
+        <a href="#" class="btn btn-primary mb-2 ml-3" data-toggle="modal" data-target="#myModal">Tambah data barang</a>
+        <a href="#" class="btn btn-warning mb-2 ml-3 pt-2 pb-3"><i class="fas fa-print"></i></a>
 
+    </div>
 
 
     <div class="card shadow">
@@ -56,8 +49,8 @@
                 <td>Mahasiswa</td>
                 <td>Kp. segaran</td>
                 <td>
-                    <a href="#" class="btn btn-primary">Edit</a>
-                    <a href="#" class="btn btn-danger">Delete</a>
+                    <a href="#" class="btn btn-success" data-toggle="modal" data-target="#myModalDetail">Detail</a>
+
                 </td>
             </tr>
             <tr>
@@ -67,8 +60,7 @@
                 <td>Mahasiswa</td>
                 <td>Kp. segaran</td>
                 <td>
-                    <a href="#" class="btn btn-primary">Edit</a>
-                    <a href="#" class="btn btn-danger">Delete</a>
+                    <a href="#" class="btn btn-success">Detail</a>
                 </td>
             </tr>
             <tr>
@@ -78,8 +70,7 @@
                 <td>Mahasiswa</td>
                 <td>Kp. segaran</td>
                 <td>
-                    <a href="#" class="btn btn-primary">Edit</a>
-                    <a href="#" class="btn btn-danger">Delete</a>
+                    <a href="#" class="btn btn-success">Detail</a>
                 </td>
             </tr>
             <tr>
@@ -89,8 +80,7 @@
                 <td>Mahasiswa</td>
                 <td>Kp. segaran</td>
                 <td>
-                    <a href="#" class="btn btn-primary">Edit</a>
-                    <a href="#" class="btn btn-danger">Delete</a>
+                    <a href="#" class="btn btn-success">Detail</a>
                 </td>
             </tr>
         </table>
@@ -105,7 +95,6 @@
             <li class="page-item"><a class="page-link" href="#">Next</a></li>
         </ul>
     </nav>
-    <!-- Vertically centered modal -->
 
     <div class="container">
 
@@ -118,7 +107,7 @@
                     <!-- heading modal -->
                     <div class="modal-header">
 
-                        <h4 class="modal-title">Form Tambah Barang</h4>
+                        <h4 class="modal-title">Form Tambah transaksi barang</h4>
                     </div>
                     <!-- body modal -->
                     <div class="modal-body">
@@ -161,5 +150,60 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal tombol detail-->
+    <div class="container">
+
+
+        <!-- Modal -->
+        <div id="myModalDetail" class="modal fade " role="dialog">
+            <div class="modal-dialog">
+                <!-- konten modal-->
+                <div class="modal-content">
+                    <!-- heading modal -->
+                    <div class="modal-header">
+
+                        <h4 class="modal-title">Detail data barang</h4>
+                    </div>
+                    <!-- body modal -->
+                    <div class="modal-body">
+                        <table class="table table-hover card-shadow">
+                            <tr class="bg-secondary text-white rounded">
+                                <td>No</td>
+                                <td>Nama</td>
+                                <td>Usia</td>
+                                <td>Pekerjaan</td>
+                                <td>Alamat</td>
+
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Diki setiawan</td>
+                                <td>23 tahun</td>
+                                <td>Mahasiswa</td>
+                                <td>Kp. segaran</td>
+
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Diki setiawan</td>
+                                <td>23 tahun</td>
+                                <td>Mahasiswa</td>
+                                <td>Kp. segaran</td>
+
+                            </tr>
+
+                        </table>
+
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    </div>
+
+                    </form>
+                </div>
+                <!-- footer modal -->
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 <!-- End of Main Content -->

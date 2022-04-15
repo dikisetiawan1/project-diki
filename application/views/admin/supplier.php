@@ -18,6 +18,7 @@
             </nav>
         </div>
     </div>
+
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
 
@@ -25,8 +26,9 @@
     <!-- Content Row -->
     <div class="row">
         <div class="col-8">
-            <a href="<?= base_url('admin/barangmasuk/tambah') ?>" class="btn btn-primary mb-2" data-toggle="modal" data-target="#myModal">Tambah data barang</a>
-            <a href=" #" class="btn btn-warning mb-2 ml-1 pt-2 pb-3"><i class="fas fa-print"></i></a>
+            <a href="#" class="btn btn-primary mb-2" data-toggle="modal" data-target="#myModal">Tambah data supplier</a>
+
+            <a href="#" class="btn btn-warning mb-2 ml-1 pt-2 pb-3"><i class="fas fa-print"></i></a>
             <a href="#" class="btn btn-success mb-2 ml-1 pt-2 pb-3 "><i class="fas fa-file-excel"></i></a>
         </div>
         <div class="col-4">
@@ -36,8 +38,6 @@
             </form>
         </div>
     </div>
-
-
 
     <div class="card shadow">
         <table class="table table-hover card-shadow">
@@ -93,6 +93,7 @@
                     <a href="#" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
+
         </table>
 
 
@@ -105,7 +106,7 @@
             <li class="page-item"><a class="page-link" href="#">Next</a></li>
         </ul>
     </nav>
-    <!-- Vertically centered modal -->
+
 
     <div class="container">
 
@@ -118,7 +119,7 @@
                     <!-- heading modal -->
                     <div class="modal-header">
 
-                        <h4 class="modal-title">Form Tambah Barang</h4>
+                        <h4 class="modal-title">Form Tambah Suppier</h4>
                     </div>
                     <!-- body modal -->
                     <div class="modal-body">

@@ -18,17 +18,15 @@
             </nav>
         </div>
     </div>
-
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Data barang keluar</h1>
+    <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
 
 
     <!-- Content Row -->
     <div class="row">
         <div class="col-8">
-            <a href="#" class="btn btn-primary mb-2">Tambah data barang</a>
-            <a href="#" class="btn btn-warning mb-2 ml-1 pt-2 pb-3"><i class="fas fa-print"></i></a>
-            <a href="#" class="btn btn-success mb-2 ml-1 pt-2 pb-3 "><i class="fas fa-file-excel"></i></a>
+            <a href="#" class="btn btn-primary mb-2" data-toggle="modal" data-target="#myModal">Tambah data cabang</a>
+
         </div>
         <div class="col-4">
             <form class="d-flex">
@@ -37,6 +35,8 @@
             </form>
         </div>
     </div>
+
+
 
     <div class="card shadow">
         <table class="table table-hover card-shadow">
@@ -92,7 +92,6 @@
                     <a href="#" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
-
         </table>
 
 
@@ -107,6 +106,59 @@
     </nav>
 
 
+    <div class="container">
 
+
+        <!-- Modal -->
+        <div id="myModal" class="modal fade " role="dialog">
+            <div class="modal-dialog">
+                <!-- konten modal-->
+                <div class="modal-content">
+                    <!-- heading modal -->
+                    <div class="modal-header">
+
+                        <h4 class="modal-title">Form Tambah Suppier</h4>
+                    </div>
+                    <!-- body modal -->
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="kodeBarang" class="form-label">Kode Barang</label>
+                                <input type="text" class="form-control" id="kd_brg" name="kd_brg" placeholder="Input kode barang">
+
+                            </div>
+                            <div class="mb-3">
+                                <label for="jenisBarang" class="form-label">Jenis barang</label>
+                                <input type="text" class="form-control" id="jenis_brg" name="name_brg" placeholder="Input jenis barang">
+
+                            </div>
+                            <div class="mb-3">
+                                <label for="kodeBarang" class="form-label">Jumlah</label>
+                                <input type="text" class="form-control" id="kd_brg" name="kd_brg" placeholder="Input jumlah barang">
+
+                            </div>
+                            <div class="mb-3">
+                                <label for="kodeBarang" class="form-label">Supplier</label>
+                                <input type="text" class="form-control" id="kd_brg" name="kd_brg" placeholder="Input name supplier">
+
+                            </div>
+                            <div class="mb-3">
+                                <label for="kodeBarang" class="form-label">Harga Barang</label>
+                                <input type="text" class="form-control" id="kd_brg" name="kd_brg" placeholder="Input harga barang">
+
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Kirim</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                            </div>
+
+                        </form>
+                    </div>
+                    <!-- footer modal -->
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- End of Main Content -->

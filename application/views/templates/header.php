@@ -14,6 +14,8 @@
 
     <!-- Custom styles for this template-->
     <link href="<?= base_url('assets/'); ?>css/sb-admin-2.min.css" rel="stylesheet">
+    <script type="text/javascript" src="<?= base_url('assets/'); ?>js/jquery.js"></script>
+    <script type="text/javascript" src="<?= base_url('assets/'); ?>js/bootstrap.js"></script>
 
 </head>
 

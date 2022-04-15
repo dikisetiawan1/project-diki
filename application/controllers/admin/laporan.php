@@ -1,27 +1,26 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Barangmasuk extends CI_Controller
+class Laporan extends CI_Controller
 {
 
-
-    public function index()
+    public function L_barang()
     {
-        $data['title'] = "Data barang masuk";
+        $data['title'] = "Laporan barang";
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
         $this->load->view('templates/topbar');
-        $this->load->view('admin/barangmasuk', $data);
+        $this->load->view('admin/laporanbarang', $data);
         $this->load->view('templates/footer');
     }
 
-    public function tambah()
+    public function L_penjualan()
     {
-        $data['title'] = "Tambah data barangs";
+        $data['title'] = "Laporan penjualan";
         $this->load->view('templates/header');
         $this->load->view('templates/sidebar');
         $this->load->view('templates/topbar');
-        $this->load->view('admin/formTambahDataBarang', $data);
+        $this->load->view('admin/laporanpenjualan', $data);
         $this->load->view('templates/footer');
     }
 }

@@ -4,7 +4,7 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="col-lg  mt-5    ">
-            <img src="/assets/img/undraw_rocket.svg" style="width: 50px; height: 50px;" alt="logo pertiwi">
+
             <h5 class="mt-3">SILP</h5>
         </div>
 
@@ -35,14 +35,14 @@
             <i class="fas fa-fw  fa-folder"></i>
 
 
-            <span>Data master barang</span>
+            <span>Master Data</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Data barang</h6>
-                <a class="collapse-item" href="<?= base_url("admin/barangmasuk"); ?>">Barang masuk</a>
-                <a class="collapse-item" href="<?= base_url("admin/barangkeluar"); ?>">Barang keluar</a>
-                <a class="collapse-item" href="<?= base_url("admin/stokbarang"); ?>">Stok barang</a>
+                <h6 class="collapse-header">Master data</h6>
+                <a class="collapse-item" href="<?= base_url("admin/barangmasuk"); ?>">Data Barang masuk</a>
+                <a class="collapse-item" href="<?= base_url("admin/supplier"); ?>">Data supplier</a>
+                <a class="collapse-item" href="<?= base_url("admin/konsumen"); ?>">Data cabang</a>
             </div>
         </div>
     </li>
@@ -50,19 +50,44 @@
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-            <i class="fa fa-fw fa-file-invoice"></i>
-            <span>Data transaksi</span>
+            <i class="fa fa-fw fa-list"></i>
+            <span>Master transaksi</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Data transaksi</h6>
-                <a class="collapse-item" href="<?= base_url("admin/datatransaksi"); ?>">Pemesanan barang</a>
-                <a class="collapse-item" href="utilities-color.html">Data supplier</a>
+                <a class="collapse-item" href="<?= base_url("admin/transaksibarang"); ?>">transaksi Barang masuk</a>
+                <a class="collapse-item" href="<?= base_url("admin/transaksipenjualan"); ?>">transkasi penjualan</a>
 
 
             </div>
         </div>
+
     </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities1" aria-expanded="true" aria-controls="collapseUtilities1">
+            <i class="fa fa-fw fa-print"></i>
+            <span>Laporan</span>
+        </a>
+        <div id="collapseUtilities1" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Laporan</h6>
+                <a class="collapse-item" href="<?= base_url("admin/laporan/L_barang"); ?>">Laporan Barang masuk</a>
+                <a class="collapse-item" href="<?= base_url("admin/laporan/L_penjualan"); ?>">Laporan penjualan</a>
+
+
+            </div>
+        </div>
+
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="<?= base_url("admin/stokbarang"); ?>" data-target="#collapsePages" aria-expanded="true" aria-controls="">
+            <i class="fa fa-fw fa-box-open"></i>
+            <span>Stok barang</span>
+        </a>
+
+    </li>
+
 
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -71,15 +96,16 @@
 
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link" href="<?= base_url("admin/LaporanBarang"); ?>" data-target="#collapsePages" aria-expanded="true" aria-controls="">
-            <i class="fa fa-fw  fa-print"></i>
-            <span>Laporan</span>
-        </a>
+
     <li class="nav-item">
         <a class="nav-link" href="#" data-target="#collapsePages" aria-expanded="true" aria-controls="">
             <i class="fa fa-fw fa-unlock"></i>
             <span>Ubah password</span>
+        </a>
+    <li class="nav-item">
+        <a class="nav-link" href="#" data-target="#collapsePages" aria-expanded="true" aria-controls="">
+            <i class="fa fa-fw fa-users"></i>
+            <span>User</span>
         </a>
 
     </li>

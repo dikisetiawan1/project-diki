@@ -47,18 +47,6 @@
             </div>
             <div class="row  g-3 align-items-center  mb-2 justify-content-center mt-5">
 
-                <div class="col-auto" style="width: 38%;">
-                    <div class="form-group ">
-
-                        <select class="form-control ml-2" name="#">
-                            <option>--Pilih laporan barang--</option>
-                            <option>Barang masuk</option>
-                            <option>Barang keluar</option>
-                            <option>Pemesanan barang</option>
-                        </select>
-
-                    </div>
-                </div>
 
             </div>
             <div class="row justify-content-center mt-5">
