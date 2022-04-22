@@ -9,10 +9,10 @@ class Dashboard extends CI_Controller
         $data['title'] = "Dashboar admin";
         $data['scrumb'] = "Dashboard";
         $data['function'] = "Index";
-        $this->load->view('templates/header');
-        $this->load->view('templates/sidebar');
-        $this->load->view('templates/topbar');
+        $this->load->view('templates_admin/header');
+        $this->load->view('templates_admin/sidebar');
+        $this->load->view('templates_admin/topbar');
         $this->load->view('admin/dashboard', $data);
-        $this->load->view('templates/footer');
+        $this->load->view('templates_admin/footer');
     }
 }
