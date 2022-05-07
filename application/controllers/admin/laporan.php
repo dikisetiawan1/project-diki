@@ -4,9 +4,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Laporan extends CI_Controller
 {
 
-    public function L_barang()
+    public function L_barangMasuk()
     {
-        $data['title'] = "Laporan barang";
+        $data['title'] = "Laporan barang masuk";
         $this->load->view('templates_admin/header');
         $this->load->view('templates_admin/sidebar');
         $this->load->view('templates_admin/topbar');
@@ -14,9 +14,9 @@ class Laporan extends CI_Controller
         $this->load->view('templates_admin/footer');
     }
 
-    public function L_penjualan()
+    public function L_barangKeluar()
     {
-        $data['title'] = "Laporan penjualan";
+        $data['title'] = "Laporan barang keluar";
         $this->load->view('templates_admin/header');
         $this->load->view('templates_admin/sidebar');
         $this->load->view('templates_admin/topbar');

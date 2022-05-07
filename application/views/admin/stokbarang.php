@@ -51,9 +51,9 @@
                 <td>Mahasiswa</td>
                 <td>Kp. segaran</td>
                 <td>
-                    <a href="#" class="btn btn-primary">Edit</a>
-                    <a href="#" class="btn btn-Danger">Delete</a>
-                    <a href="#" class="btn btn-warning">Print</a>
+
+                    <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Edit data"><i class="fas fa-fw fa-edit"></i></a>
+                    <a onclick=" return confirm('yakin di hapus?')" href="#" class="btn btn-danger"><i class="fa fa-fw fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Hapus data"></i></a>
                 </td>
             </tr>
             <tr>

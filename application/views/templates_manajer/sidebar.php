@@ -41,10 +41,8 @@
         <div id="collapseUtilities2" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Laporan</h6>
-                <a class="collapse-item" href="#">Laporan Barang masuk</a>
-                <a class="collapse-item" href="#">Laporan penjualan</a>
-
-
+                <a class="collapse-item" href="#">Laporan barang masuk</a>
+                <a class="collapse-item" href="#">Laporan barang keluar</a>
             </div>
         </div>
 

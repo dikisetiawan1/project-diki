@@ -40,10 +40,10 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Master data</h6>
-                <a class="collapse-item" href="<?= base_url("admin/barangmasuk"); ?>">Data Barang </a>
+                <a class="collapse-item" href="<?= base_url("admin/databarang"); ?>">Data Barang </a>
                 <a class="collapse-item" href="<?= base_url("admin/supplier"); ?>">Data supplier</a>
-                <a class="collapse-item" href="<?= base_url("admin/konsumen"); ?>">Data cabang</a>
-                <a class="collapse-item" href="<?= base_url("admin/pemesanan"); ?>">Data pemesanan barang</a>
+                <a class="collapse-item" href="<?= base_url("admin/kategoribarang"); ?>">kategori barang</a>
+
             </div>
         </div>
     </li>
@@ -52,15 +52,13 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fa fa-fw fa-list"></i>
-            <span>Master transaksi</span>
+            <span>Transaksi barang </span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Data transaksi</h6>
-                <a class="collapse-item" href="<?= base_url("admin/transaksibarang"); ?>">transaksi Barang masuk</a>
-                <a class="collapse-item" href="<?= base_url("admin/transaksipenjualan"); ?>">transkasi penjualan</a>
-
-
+                <a class="collapse-item" href="<?= base_url("admin/transaksibarangmasuk"); ?>">Transaksi barang masuk</a>
+                <a class="collapse-item" href="<?= base_url("admin/transaksibarangkeluar"); ?>">Transaksi barang keluar</a>
             </div>
         </div>
 
@@ -73,8 +71,8 @@
         <div id="collapseUtilities1" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Laporan</h6>
-                <a class="collapse-item" href="<?= base_url("admin/laporan/L_barang"); ?>">Laporan Barang masuk</a>
-                <a class="collapse-item" href="<?= base_url("admin/laporan/L_penjualan"); ?>">Laporan penjualan</a>
+                <a class="collapse-item" href="<?= base_url("admin/laporan/L_barangMasuk"); ?>">Laporan Barang masuk</a>
+                <a class="collapse-item" href="<?= base_url("admin/laporan/L_barangKeluar"); ?>">Laporan Barang keluar</a>
 
 
             </div>
@@ -85,7 +83,7 @@
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url("admin/stokbarang"); ?>" data-target="#collapsePages" aria-expanded="true" aria-controls="">
             <i class="fa fa-fw fa-box-open"></i>
-            <span>Stok barang</span>
+            <span>Stok barang kosong</span>
         </a>
 
     </li>
@@ -104,13 +102,7 @@
             <i class="fa fa-fw fa-unlock"></i>
             <span>Ubah password</span>
         </a>
-    <li class="nav-item">
-        <a class="nav-link" href="#" data-target="#collapsePages" aria-expanded="true" aria-controls="">
-            <i class="fa fa-fw fa-users"></i>
-            <span>User</span>
-        </a>
 
-    </li>
 
 
     </li>

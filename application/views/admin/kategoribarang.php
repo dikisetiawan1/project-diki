@@ -18,7 +18,6 @@
             </nav>
         </div>
     </div>
-
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
 
@@ -26,38 +25,37 @@
     <!-- Content Row -->
     <div class="row">
         <div class="col-8">
-            <a href="#" class="btn btn-primary mb-2" data-toggle="modal" data-target="#myModal">Tambah data supplier</a>
+            <a href="#" class="btn btn-primary mb-2" data-toggle="modal" data-target="#myModal">Tambah data kategori</a>
 
-            <a href="#" class="btn btn-warning mb-2 ml-1 pt-2 pb-3"><i class="fas fa-print"></i></a>
-            <a href="#" class="btn btn-success mb-2 ml-1 pt-2 pb-3 "><i class="fas fa-file-excel"></i></a>
         </div>
 
     </div>
     <?= $this->session->flashdata('pesan') ?>
 
+
+
+
     <div class="card shadow">
         <table class="table table-hover card-shadow">
             <tr class="bg-secondary text-white rounded">
-                <td>No</td>
-                <td>Nama</td>
-                <td>No.Tlp</td>
-                <td>Alamat</td>
+                <td>#</td>
+                <td>Kategori barang</td>
                 <td>Aksi</td>
+
             </tr>
             <?php $no = 1;
-            foreach ($supplier as $su) : ?>
+            foreach ($kategori as $kt) : ?>
+
                 <tr>
                     <td><?= $no++; ?></td>
-                    <td><?= $su->nama_supplier ?></td>
-                    <td><?= $su->no_tlp ?></td>
-                    <td><?= $su->alamat ?></td>
+                    <td><?= $kt->nama_kategori ?></td>
+
                     <td>
                         <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Edit data"><i class="fas fa-fw fa-edit"></i></a>
                         <a onclick=" return confirm('yakin di hapus?')" href="#" class="btn btn-danger"><i class="fa fa-fw fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Hapus data"></i></a>
                     </td>
                 </tr>
             <?php endforeach; ?>
-
         </table>
 
 
@@ -83,27 +81,17 @@
                     <!-- heading modal -->
                     <div class="modal-header">
 
-                        <h4 class="modal-title">Form Tambah Suppier</h4>
+                        <h4 class="modal-title">Form Tambah Kategori</h4>
                     </div>
                     <!-- body modal -->
                     <div class="modal-body">
-                        <form method="post" action="<?= base_url('admin/supplier/tambahDataAksi') ?>">
+                        <form method="post" action="<?= base_url('admin/kategoribarang/tambahDataAksi') ?>">
                             <div class="mb-3">
-                                <label for="kodeBarang" class="form-label">Nama supplier</label>
-                                <input type="text" class="form-control" id="nama_supplier" name="nama_supplier" placeholder="Input kode barang">
+                                <label for="kodeBarang" class="form-label">Nama kategori</label>
+                                <input type="text" class="form-control" id="nama_kategori" name="nama_kategori" placeholder="Input kategori barang">
 
                             </div>
 
-                            <div class="mb-3">
-                                <label for="jenisBarang" class="form-label">No.Tlp</label>
-                                <input type="text" class="form-control" id="no_tlp" name="no_tlp" placeholder="Input jenis barang">
-
-                            </div>
-                            <div class="mb-3">
-                                <label for="jenisBarang" class="form-label">Alamat</label>
-                                <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Input jenis barang">
-
-                            </div>
 
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-primary">Kirim</button>
