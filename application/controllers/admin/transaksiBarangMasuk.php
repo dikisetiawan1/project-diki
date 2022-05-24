@@ -9,7 +9,7 @@ class Transaksibarangmasuk extends CI_Controller
     public function index()
     {
         $data['title'] = "Transaksi Barang Masuk";
-        $data['barangmasuk'] = $this->db->query("SELECT tbl_barang_masuk.tgl_masuk,tbl_barang_masuk.stok_masuk,tbl_barang_masuk.hrg_brg,tbl_data_barang.nama_brg,tbl_supplier.nama_supplier
+        $data['barangmasuk'] = $this->db->query("SELECT tbl_barang_masuk.id_brgMasuk, tbl_barang_masuk.tgl_masuk,tbl_barang_masuk.stok_masuk,tbl_barang_masuk.hrg_brg,tbl_data_barang.nama_brg,tbl_supplier.nama_supplier
         
         FROM tbl_barang_masuk
 
@@ -73,13 +73,25 @@ class Transaksibarangmasuk extends CI_Controller
             redirect('admin/transaksibarangmasuk');
         }
     }
+
     public function _rules()
     {
 
-        $this->form_validation->set_rules('id_barang', 'nama barang', 'required');
+
         $this->form_validation->set_rules('tgl_masuk', 'tanggal masuk ', 'required');
         $this->form_validation->set_rules('hrg_brg', 'harga barang ', 'required');
         $this->form_validation->set_rules('stok_masuk', 'stok masuk ', 'required');
         $this->form_validation->set_rules('id_supplier', 'stok masuk ', 'required');
+    }
+    public function deleteData($id)
+    {
+        $where = array('id_brgMasuk' => $id);
+        $this->load->model('inventoriModel');
+        $this->inventoriModel->delete_data($where, 'tbl_barang_masuk');
+        $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Success!</strong> Data berhasil di Hapus!
+      </div>');
+        redirect('admin/transaksibarangkeluar');
     }
 }

@@ -16,4 +16,8 @@ class InventoriModel extends CI_Model
         $this->db->where($where);
         $this->db->delete($table);
     }
+    public function update_data($table, $data, $where)
+    {
+        $this->db->update($table, $data, $where);
+    }
 }

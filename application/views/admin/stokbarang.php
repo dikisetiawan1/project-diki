@@ -24,6 +24,10 @@
 
     <!-- Content Row -->
     <div class="row">
+        <div class="col-8">
+
+            <a href="#" class="btn btn-warning mb-2 p-3"><i class="fas fa-print"></i></a>
+        </div>
 
         <div class="col-4">
             <form class="d-flex">
@@ -37,61 +41,28 @@
     <div class="card shadow">
         <table class="table table-hover card-shadow">
             <tr class="bg-secondary text-white rounded">
-                <td>No</td>
-                <td>Nama</td>
-                <td>Usia</td>
-                <td>Pekerjaan</td>
-                <td>Alamat</td>
+                <td>#</td>
+                <td>Nama barang</td>
+                <td>Kategori</td>
+                <td>Stok</td>
                 <td>Aksi</td>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>Diki setiawan</td>
-                <td>23 tahun</td>
-                <td>Mahasiswa</td>
-                <td>Kp. segaran</td>
-                <td>
+            <?php $no = 1;
+            foreach ($stok as $s) : ?>
+                <tr>
+                    <td><?= $no++; ?></td>
+                    <td><?= $s->nama_brg ?></td>
+                    <td><?= $s->nama_kategori ?></td>
+                    <td><?= $s->stok_brg ?></td>
 
-                    <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Edit data"><i class="fas fa-fw fa-edit"></i></a>
-                    <a onclick=" return confirm('yakin di hapus?')" href="#" class="btn btn-danger"><i class="fa fa-fw fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Hapus data"></i></a>
-                </td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Diki setiawan</td>
-                <td>23 tahun</td>
-                <td>Mahasiswa</td>
-                <td>Kp. segaran</td>
-                <td>
-                    <a href="#" class="btn btn-primary">Edit</a>
-                    <a href="#" class="btn btn-Danger">Delete</a>
-                    <a href="#" class="btn btn-warning">Print</a>
-                </td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Diki setiawan</td>
-                <td>23 tahun</td>
-                <td>Mahasiswa</td>
-                <td>Kp. segaran</td>
-                <td>
-                    <a href="#" class="btn btn-primary">Edit</a>
-                    <a href="#" class="btn btn-Danger">Delete</a>
-                    <a href="#" class="btn btn-warning">Print</a>
-                </td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Diki setiawan</td>
-                <td>23 tahun</td>
-                <td>Mahasiswa</td>
-                <td>Kp. segaran</td>
-                <td>
-                    <a href="#" class="btn btn-primary">Edit</a>
-                    <a href="#" class="btn btn-Danger">Delete</a>
-                    <a href="#" class="btn btn-warning">Print</a>
-                </td>
-            </tr>
+                    <td>
+
+                        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-placement="top" title="Detail data"><i class="fa fa-fw fa-info-circle"></i></i>
+                    </td>
+
+                </tr>
+            <?php endforeach; ?>
+
         </table>
 
 
@@ -108,3 +79,24 @@
 
 </div>
 <!-- End of Main Content -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+
+                <a href="#" type="submit" class="btn btn-danger">Print</a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

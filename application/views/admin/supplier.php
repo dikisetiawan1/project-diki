@@ -26,7 +26,7 @@
     <!-- Content Row -->
     <div class="row">
         <div class="col-8">
-            <a href="#" class="btn btn-primary mb-2" data-toggle="modal" data-target="#myModal">Tambah data supplier</a>
+            <a href="#" class="btn btn-primary mb-2" data-toggle="modal" data-target="#myModal">Tambah data</a>
 
             <a href="#" class="btn btn-warning mb-2 ml-1 pt-2 pb-3"><i class="fas fa-print"></i></a>
             <a href="#" class="btn btn-success mb-2 ml-1 pt-2 pb-3 "><i class="fas fa-file-excel"></i></a>
@@ -52,7 +52,7 @@
                     <td><?= $su->no_tlp ?></td>
                     <td><?= $su->alamat ?></td>
                     <td>
-                        <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Edit data"><i class="fas fa-fw fa-edit"></i></a>
+                        <a href="<?= base_url('admin/supplier/updateData/' . $su->id_supplier)  ?>" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Edit data"><i class="fas fa-fw fa-edit"></i></a>
                         <a onclick=" return confirm('yakin di hapus?')" href="#" class="btn btn-danger"><i class="fa fa-fw fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Hapus data"></i></a>
                     </td>
                 </tr>
@@ -90,18 +90,18 @@
                         <form method="post" action="<?= base_url('admin/supplier/tambahDataAksi') ?>">
                             <div class="mb-3">
                                 <label for="kodeBarang" class="form-label">Nama supplier</label>
-                                <input type="text" class="form-control" id="nama_supplier" name="nama_supplier" placeholder="Input kode barang">
+                                <input type="text" class="form-control" id="nama_supplier" name="nama_supplier" placeholder="Input nama supplier">
 
                             </div>
 
                             <div class="mb-3">
                                 <label for="jenisBarang" class="form-label">No.Tlp</label>
-                                <input type="text" class="form-control" id="no_tlp" name="no_tlp" placeholder="Input jenis barang">
+                                <input type="text" class="form-control" id="no_tlp" name="no_tlp" placeholder="Input No handphone">
 
                             </div>
                             <div class="mb-3">
                                 <label for="jenisBarang" class="form-label">Alamat</label>
-                                <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Input jenis barang">
+                                <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Input alamat">
 
                             </div>
 

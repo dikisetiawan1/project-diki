@@ -26,8 +26,17 @@
 
     <!-- Content Row -->
     <div class="row">
-        <a href="#" class="btn btn-primary mb-2 ml-3" data-toggle="modal" data-target="#myModal">Tambah Data</a>
-        <a href="#" class="btn btn-warning mb-2 ml-3 pt-2 pb-3"><i class="fas fa-print"></i></a>
+        <div class="col-8">
+
+            <a href="#" class="btn btn-primary mb-2 " data-toggle="modal" data-target="#myModal">Tambah Data</a>
+            <a href="#" class="btn btn-warning mb-2 pt-2 pb-3"><i class="fas fa-print"></i></a>
+        </div>
+        <div class="col-4">
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success ml-2" type="submit">Search</button>
+            </form>
+        </div>
 
 
     </div>
@@ -56,9 +65,8 @@
 
 
                     <td>
-                        <a href="#" class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Detail data"><i class="fa fa-fw fa-info-circle"></i></i></a>
-                        <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Edit data"><i class="fas fa-fw fa-edit"></i></a>
-                        <a onclick=" return confirm('yakin di hapus?')" href="#" class="btn btn-danger"><i class="fa fa-fw fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Hapus data"></i></a>
+                        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-placement="top" title="Detail data"><i class="fa fa-fw fa-info-circle"></i></i>
+                            <a onclick=" return confirm('yakin di hapus?')" href="<?= base_url('admin/transaksibarangkeluar/deleteData/' . $bm->id_brgMasuk) ?>" class="btn btn-danger"><i class="fa fa-fw fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Hapus data"></i></a>
 
                     </td>
                 </tr>
@@ -107,17 +115,17 @@
                             </div>
                             <div class="mb-3">
                                 <label for="kodeBarang" class="form-label">Tgl masuk</label>
-                                <input type="date" class="form-control" id="tgl_masuk" name="tgl_masuk" placeholder="Input jumlah barang">
+                                <input type="date" class="form-control" id="tgl_masuk" name="tgl_masuk" placeholder="Input tgl masuk barang">
 
                             </div>
                             <div class="mb-3">
                                 <label for="kodeBarang" class="form-label">Harga barang</label>
-                                <input type="text" class="form-control" id="hrg_brg" name="hrg_brg" placeholder="Input name supplier">
+                                <input type="text" class="form-control" id="hrg_brg" name="hrg_brg" placeholder="Input harga barang">
 
                             </div>
                             <div class="mb-3">
                                 <label for="kodeBarang" class="form-label">Qty</label>
-                                <input type="text" class="form-control" id="stok_masuk" name="stok_masuk" placeholder="Input harga barang">
+                                <input type="text" class="form-control" id="stok_masuk" name="stok_masuk" placeholder="Input qty barang">
 
                             </div>
                             <div class="mb-3">
@@ -141,6 +149,28 @@
                         </form>
                     </div>
                     <!-- footer modal -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End modal Detail-->
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+
+                    <a href="#" type="submit" class="btn btn-danger">Print</a>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

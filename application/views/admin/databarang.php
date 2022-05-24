@@ -25,17 +25,20 @@
     <!-- Content Row -->
     <div class="row">
         <div class="col-8">
-            <a href="<?= base_url('admin/barangmasuk/tambah') ?>" class="btn btn-primary mb-2" data-toggle="modal" data-target="#myModal">Tambah data barang</a>
+            <a href="<?= base_url('admin/barangmasuk/tambah') ?>" class="btn btn-primary mb-2" data-toggle="modal" data-target="#myModal">Tambah data </a>
             <a href=" #" class="btn btn-warning mb-2 ml-1 pt-2 pb-3"><i class="fas fa-print"></i></a>
             <a href="#" class="btn btn-success mb-2 ml-1 pt-2 pb-3 "><i class="fas fa-file-excel"></i></a>
         </div>
-        <?= $this->session->flashdata('pesan') ?>
+
         <div class="col-4">
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success ml-2" type="submit">Search</button>
             </form>
         </div>
+    </div>
+    <div class="col-12">
+        <?= $this->session->flashdata('pesan') ?>
     </div>
 
 
@@ -48,7 +51,6 @@
                 <td>Kategori</td>
                 <td>Harga barang</td>
                 <td>Stok</td>
-                <td>Supplier</td>
                 <td>Aksi</td>
             </tr>
             <?php $no = 1;
@@ -61,11 +63,11 @@
                     <td><?= $br->nama_kategori ?></td>
                     <td><?= $br->hrg_brg ?></td>
                     <td><?= $br->stok_brg ?></td>
-                    <td><?= $br->nama_supplier ?></td>
+
 
                     <td>
-                        <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Edit data"><i class="fas fa-fw fa-edit"></i></a>
-                        <a onclick=" return confirm('yakin di hapus?')" href="#" class="btn btn-danger"><i class="fa fa-fw fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Hapus data"></i></a>
+                        <a href="<?= base_url('admin/dataBarang/updateData/' . $br->id_barang) ?>" class="btn btn-primary" data-placement="top" title="Edit data"><i class="fas fa-fw fa-edit"></i></a>
+                        <a onclick=" return confirm('yakin di hapus?')" href="<?= base_url('admin/databarang/deleteData/' . $br->id_barang) ?>" class="btn btn-danger"><i class="fa fa-fw fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Hapus data"></i></a>
                     </td>
                 </tr>
             <?php endforeach; ?>
@@ -113,7 +115,7 @@
                             <div class="mb-3">
                                 <label>Kategori</label>
                                 <select class="form-control " name="id_kategori">
-                                    <option>--Pilih barang--</option>
+                                    <option>--Pilih kategori--</option>
                                     <?php
                                     foreach ($kategori as $k) : ?>
 
@@ -127,18 +129,6 @@
                                 <input type="text" class="form-control" id="hrg_brg" name="hrg_brg" placeholder="Input harga barang">
 
                             </div>
-                            <div class="mb-3">
-                                <label>Supplier</label>
-                                <select class="form-control " name="id_supplier">
-                                    <option>--Pilih barang--</option>
-                                    <?php
-                                    foreach ($supplier as $sp) : ?>
-
-                                        <option value="<?= $sp->id_supplier ?>"><?= $sp->nama_supplier ?></option>
-                                    <?php endforeach; ?>
-                                </select>
-                                <?= form_error('id_barang', '<div class="text-small text-danger"></div>') ?>
-                            </div>
 
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-primary">Kirim</button>
@@ -151,6 +141,10 @@
                 </div>
             </div>
         </div>
+
+
+        <!-- modal edit-->
+
+
     </div>
-</div>
-<!-- End of Main Content -->
+    <!-- End of Main Content -->

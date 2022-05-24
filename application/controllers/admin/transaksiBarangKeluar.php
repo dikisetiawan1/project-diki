@@ -7,7 +7,7 @@ class Transaksibarangkeluar extends CI_Controller
     {
         $data['title'] = "Transaksi Barang keluar";
         $this->load->model('inventoriModel');
-        $data['barang'] = $this->db->query("SELECT tbl_data_barang.nama_brg,tbl_barang_keluar.tanggal_keluar,tbl_barang_keluar.cabang,tbl_barang_keluar.unit,tbl_barang_keluar.stok_keluar,tbl_barang_keluar.harga_brg
+        $data['barang'] = $this->db->query("SELECT tbl_barang_keluar.id_brgKeluar,tbl_data_barang.nama_brg,tbl_barang_keluar.tanggal_keluar,tbl_barang_keluar.cabang,tbl_barang_keluar.unit,tbl_barang_keluar.stok_keluar,tbl_barang_keluar.harga_brg
         FROM tbl_barang_keluar
         INNER JOIN tbl_data_barang ON tbl_barang_keluar.id_barang = tbl_data_barang.id_barang
         
@@ -64,5 +64,16 @@ class Transaksibarangkeluar extends CI_Controller
         $this->form_validation->set_rules('unit', 'unit', 'required');
         $this->form_validation->set_rules('stok_keluar', 'qty', 'required');
         $this->form_validation->set_rules('harga_brg', 'Harga', 'required');
+    }
+    public function deleteData($id)
+    {
+        $where = array('id_brgKeluar' => $id);
+        $this->load->model('inventoriModel');
+        $this->inventoriModel->delete_data($where, 'tbl_barang_keluar');
+        $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Success!</strong> Data berhasil di Hapus!
+      </div>');
+        redirect('admin/transaksibarangkeluar');
     }
 }

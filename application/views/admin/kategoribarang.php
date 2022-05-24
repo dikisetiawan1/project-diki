@@ -25,7 +25,7 @@
     <!-- Content Row -->
     <div class="row">
         <div class="col-8">
-            <a href="#" class="btn btn-primary mb-2" data-toggle="modal" data-target="#myModal">Tambah data kategori</a>
+            <a href="#" class="btn btn-primary mb-2" data-toggle="modal" data-target="#myModal">Tambah data</a>
 
         </div>
 
@@ -51,7 +51,7 @@
                     <td><?= $kt->nama_kategori ?></td>
 
                     <td>
-                        <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Edit data"><i class="fas fa-fw fa-edit"></i></a>
+                        <a href="<?= base_url('admin/kategoriBarang/updateData/' . $kt->id_kategori) ?>" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Edit data"><i class="fas fa-fw fa-edit"></i></a>
                         <a onclick=" return confirm('yakin di hapus?')" href="#" class="btn btn-danger"><i class="fa fa-fw fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Hapus data"></i></a>
                     </td>
                 </tr>
