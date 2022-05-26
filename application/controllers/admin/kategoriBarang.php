@@ -90,4 +90,15 @@ class Kategoribarang extends CI_Controller
     {
         $this->form_validation->set_rules('nama_kategori', 'kategori', 'required');
     }
+    public function deleteData($id)
+    {
+        $where = array('id_kategori' => $id);
+        $this->load->model('inventoriModel');
+        $this->inventoriModel->delete_data($where, 'tbl_kategori');
+        $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Success!</strong> Data berhasil di Hapus!
+      </div>');
+        redirect('admin/supplier');
+    }
 }

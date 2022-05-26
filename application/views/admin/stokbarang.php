@@ -26,7 +26,7 @@
     <div class="row">
         <div class="col-8">
 
-            <a href="#" class="btn btn-warning mb-2 p-3"><i class="fas fa-print"></i></a>
+            <a href="<?= base_url('admin/stokBarang/cetakData') ?>" class="btn btn-warning mb-2 p-3"><i class="fas fa-print"></i></a>
         </div>
 
         <div class="col-4">

@@ -64,9 +64,6 @@ class Databarang extends CI_Controller
             redirect('admin/databarang');
         }
     }
-
-
-
     public function updateData($id)
     {
         $where = array('id_barang' => $id);
@@ -142,5 +139,21 @@ class Databarang extends CI_Controller
         <strong>Success!</strong> Data berhasil di Hapus!
       </div>');
         redirect('admin/dataJabatan');
+    }
+
+
+    public function cetakData()
+    {
+        $data['title'] = "Data barang";
+        $this->load->model('inventoriModel');
+        $data['cetakbarang'] = $this->db->query("SELECT tbl_data_barang.id_barang,tbl_data_barang.stok_brg, tbl_data_barang.nama_brg,tbl_data_barang.hrg_brg,tbl_kategori.nama_kategori        
+        FROM tbl_data_barang
+        
+        INNER JOIN tbl_kategori ON tbl_data_barang.id_kategori=tbl_kategori.id_kategori
+        
+        ")->result();
+        $this->load->view('templates_admin/header');
+
+        $this->load->view('admin/cetakBarang', $data);
     }
 }

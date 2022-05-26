@@ -94,4 +94,21 @@ class Transaksibarangmasuk extends CI_Controller
       </div>');
         redirect('admin/transaksibarangkeluar');
     }
+    public function cetakData()
+    {
+        $data['title'] = "Transaksi Barang Masuk";
+        $data['barangmasuk'] = $this->db->query("SELECT tbl_barang_masuk.id_brgMasuk, tbl_barang_masuk.tgl_masuk,tbl_barang_masuk.stok_masuk,tbl_barang_masuk.hrg_brg,tbl_data_barang.nama_brg,tbl_supplier.nama_supplier
+        
+        FROM tbl_barang_masuk
+
+        INNER JOIN tbl_data_barang ON tbl_barang_masuk.id_barang=tbl_data_barang.id_barang
+        INNER JOIN tbl_supplier ON tbl_barang_masuk.id_supplier=tbl_supplier.id_supplier
+        
+        
+         ")->result();
+        $this->load->model('inventoriModel');
+        $this->load->view('templates_admin/header');
+
+        $this->load->view('admin/cetakBarangMasuk', $data);
+    }
 }

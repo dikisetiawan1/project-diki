@@ -10,12 +10,10 @@ class Transaksibarangkeluar extends CI_Controller
         $data['barang'] = $this->db->query("SELECT tbl_barang_keluar.id_brgKeluar,tbl_data_barang.nama_brg,tbl_barang_keluar.tanggal_keluar,tbl_barang_keluar.cabang,tbl_barang_keluar.unit,tbl_barang_keluar.stok_keluar,tbl_barang_keluar.harga_brg
         FROM tbl_barang_keluar
         INNER JOIN tbl_data_barang ON tbl_barang_keluar.id_barang = tbl_data_barang.id_barang
-        
-        
-        
+      
         ")->result();
         $this->load->model('inventoriModel');
-        $data['masterbarang'] = $this->inventoriModel->get_data('tbl_data_barang')->result();
+        $data['masterbarang'] = $this->db->query("SELECT * FROM tbl_data_barang WHERE stok_brg > 0")->result();
 
         $this->load->view('templates_admin/header');
         $this->load->view('templates_admin/sidebar');
@@ -75,5 +73,21 @@ class Transaksibarangkeluar extends CI_Controller
         <strong>Success!</strong> Data berhasil di Hapus!
       </div>');
         redirect('admin/transaksibarangkeluar');
+    }
+    public function cetakData()
+    {
+        $data['title'] = "Transaksi Barang keluar";
+        $this->load->model('inventoriModel');
+        $data['barangkeluar'] = $this->db->query("SELECT tbl_barang_keluar.id_brgKeluar,tbl_data_barang.nama_brg,tbl_barang_keluar.tanggal_keluar,tbl_barang_keluar.cabang,tbl_barang_keluar.unit,tbl_barang_keluar.stok_keluar,tbl_barang_keluar.harga_brg
+        FROM tbl_barang_keluar
+        INNER JOIN tbl_data_barang ON tbl_barang_keluar.id_barang = tbl_data_barang.id_barang
+      
+        ")->result();
+        $data['total'] = $this->db->query("SELECT SUM(harga_brg) FROM tbl_barang_keluar")->result();
+
+        $this->load->model('inventoriModel');
+        $this->load->view('templates_admin/header');
+
+        $this->load->view('admin/cetakBarangKeluar', $data);
     }
 }

@@ -98,4 +98,24 @@ class Supplier extends CI_Controller
         $this->form_validation->set_rules('no_tlp', 'nomor telepone', 'required');
         $this->form_validation->set_rules('alamat', 'alamat', 'required');
     }
+    public function deleteData($id)
+    {
+        $where = array('id_supplier' => $id);
+        $this->load->model('inventoriModel');
+        $this->inventoriModel->delete_data($where, 'tbl_supplier');
+        $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Success!</strong> Data berhasil di Hapus!
+      </div>');
+        redirect('admin/supplier');
+    }
+    public function cetakData()
+    {
+        $data['title'] = "Data supplier";
+        $this->load->model('inventoriModel');
+        $data['supplier'] = $this->inventoriModel->get_data('tbl_supplier')->result();
+        $this->load->view('templates_admin/header');
+
+        $this->load->view('admin/cetakSupplier', $data);
+    }
 }

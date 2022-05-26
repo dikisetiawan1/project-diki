@@ -52,7 +52,7 @@
 
                     <td>
                         <a href="<?= base_url('admin/kategoriBarang/updateData/' . $kt->id_kategori) ?>" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Edit data"><i class="fas fa-fw fa-edit"></i></a>
-                        <a onclick=" return confirm('yakin di hapus?')" href="#" class="btn btn-danger"><i class="fa fa-fw fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Hapus data"></i></a>
+                        <a onclick=" return confirm('yakin di hapus?')" href="<?= base_url('admin/kategoriBarang/deleteData/' . $kt->id_kategori) ?>" class="btn btn-danger"><i class="fa fa-fw fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Hapus data"></i></a>
                     </td>
                 </tr>
             <?php endforeach; ?>

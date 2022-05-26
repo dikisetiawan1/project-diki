@@ -29,7 +29,7 @@
         <div class="col-8">
 
             <a href="#" class="btn btn-primary mb-2 " data-toggle="modal" data-target="#myModal">Tambah Data</a>
-            <a href="#" class="btn btn-warning mb-2 pt-2 pb-3"><i class="fas fa-print"></i></a>
+            <a href="<?= base_url('admin/transaksiBarangMasuk/cetakData') ?>" class="btn btn-warning mb-2 pt-2 pb-3"><i class="fas fa-print"></i></a>
         </div>
         <div class="col-4">
             <form class="d-flex">
