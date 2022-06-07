@@ -41,15 +41,15 @@
         <div id="collapseUtilities2" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Laporan</h6>
-                <a class="collapse-item" href="#">Laporan barang masuk</a>
-                <a class="collapse-item" href="#">Laporan barang keluar</a>
+                <a class="collapse-item" href="<?= base_url('manajer/laporan/L_barangMasuk') ?>">Laporan barang masuk</a>
+                <a class="collapse-item" href="<?= base_url('manajer/laporan/L_barangKeluar') ?>">Laporan barang keluar</a>
             </div>
         </div>
 
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="#" data-target="#collapsePages" aria-expanded="true" aria-controls="">
+        <a class="nav-link" href="<?= base_url('manajer/stokbarang/') ?>" data-target="#collapsePages" aria-expanded="true" aria-controls="">
             <i class="fa fa-fw fa-box-open"></i>
             <span>Stok barang</span>
         </a>

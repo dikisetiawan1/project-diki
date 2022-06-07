@@ -27,7 +27,7 @@
 
 
     <div class="card mx-auto  shadow d-flex align-items-center  " style="height: 60%; width:50%; ">
-        <form action="index.php " method="get">
+        <form action="<?= base_url('admin/laporan/L_barangMasuk') ?>" method="POST" target="_blank">
             <div class="row g-3 align-items-center mt-5 mb-2 justify-content-center">
                 <div class="col-auto">
                     <label class="col-form-label">Periode</label>

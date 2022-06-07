@@ -98,7 +98,7 @@
     <!-- Nav Item - Pages Collapse Menu -->
 
     <li class="nav-item">
-        <a class="nav-link" href="#" data-target="#collapsePages" aria-expanded="true" aria-controls="">
+        <a class="nav-link" href="<?= base_url('admin/ubahPassword') ?>" data-target="#collapsePages" aria-expanded="true" aria-controls="">
             <i class="fa fa-fw fa-unlock"></i>
             <span>Ubah password</span>
         </a>
