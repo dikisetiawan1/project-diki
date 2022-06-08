@@ -20,4 +20,12 @@ class InventoriModel extends CI_Model
     {
         $this->db->update($table, $data, $where);
     }
+    public function get_datasum()
+    {
+        return $this->db->query("SELECT sum(stok_masuk) AS total_stok, sum(hrg_brg) AS total_harga FROM tbl_barang_masuk");
+    }
+    public function get_datasum2()
+    {
+        return $this->db->query("SELECT sum(stok_keluar) AS total_stok, sum(harga_brg) AS total_harga FROM tbl_barang_keluar");
+    }
 }

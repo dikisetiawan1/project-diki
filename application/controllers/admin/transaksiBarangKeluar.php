@@ -83,8 +83,9 @@ class Transaksibarangkeluar extends CI_Controller
         INNER JOIN tbl_data_barang ON tbl_barang_keluar.id_barang = tbl_data_barang.id_barang
       
         ")->result();
-        $data['total'] = $this->db->query("SELECT SUM(harga_brg) FROM tbl_barang_keluar")->result();
 
+        $this->load->model('inventoriModel');
+        $data['stoksum'] = $this->inventoriModel->get_datasum()->result();
         $this->load->model('inventoriModel');
         $this->load->view('templates_admin/header');
 

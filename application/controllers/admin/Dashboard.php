@@ -7,6 +7,8 @@ class Dashboard extends CI_Controller
     public function index()
     {
         $data['title'] = "Dashboar admin";
+        $data['title2'] = "Update 3 Transaksi barang masuk terakhir";
+        $data['title3'] = "Update 3 Transaksi barang keluar terakhir";
         $data['scrumb'] = "Dashboard";
         $data['function'] = "Index";
 
@@ -18,6 +20,20 @@ class Dashboard extends CI_Controller
         $data['brgKeluar'] = $brgKeluar->num_rows();
         $data['barang'] = $barang->num_rows();
         $data['stokBrg'] = $stokBrg->num_rows();
+
+        $data['barangmasuk'] = $this->db->query("SELECT tbl_barang_masuk.id_brgMasuk, tbl_barang_masuk.tgl_masuk,tbl_barang_masuk.stok_masuk,tbl_barang_masuk.hrg_brg,tbl_data_barang.nama_brg,tbl_supplier.nama_supplier
+        
+        FROM tbl_barang_masuk
+
+        INNER JOIN tbl_data_barang ON tbl_barang_masuk.id_barang=tbl_data_barang.id_barang
+        INNER JOIN tbl_supplier ON tbl_barang_masuk.id_supplier=tbl_supplier.id_supplier
+
+        ORDER BY tgl_masuk DESC LIMIT 3")->result();
+        $data['barangkeluar'] = $this->db->query("SELECT tbl_barang_keluar.id_brgKeluar,tbl_data_barang.nama_brg,tbl_barang_keluar.tanggal_keluar,tbl_barang_keluar.cabang,tbl_barang_keluar.unit,tbl_barang_keluar.stok_keluar,tbl_barang_keluar.harga_brg
+         FROM tbl_barang_keluar
+         INNER JOIN tbl_data_barang ON tbl_barang_keluar.id_barang = tbl_data_barang.id_barang
+         ORDER BY tanggal_keluar DESC LIMIT 3
+         ")->result();
         $this->load->view('templates_admin/header');
         $this->load->view('templates_admin/sidebar');
         $this->load->view('templates_admin/topbar');

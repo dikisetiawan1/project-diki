@@ -6,7 +6,7 @@
 
 
 <!-- Begin Page Content -->
-<div class="container-fluid">
+<div class="container-fluid ">
     <div class="row">
         <div class="col-12">
             <nav aria-label="breadcrumb">
@@ -19,7 +19,7 @@
         </div>
     </div>
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Dashboard</h1>
+    <h1 class="h3 mb-4 text-gray-800 "><?= $title ?></h1>
 
     <!-- Content Row -->
     <div class="row">
@@ -111,6 +111,67 @@
 
 </div>
 <!-- /.container-fluid -->
+
+<div class="container-fluid">
+    <h1 class="h5 mb-2 mt-4  text-success "><?= $title2 ?></h1>
+
+    <div class="card shadow">
+        <table class="table table-hover card-shadow ">
+            <tr class="bg-secondary text-white rounded">
+                <td>#</td>
+                <td>Nama barang</td>
+                <td>Tgl masuk</td>
+                <td>Harga barang</td>
+                <td>Supplier</td>
+                <td>Qty</td>
+
+            </tr>
+            <?php $no = 1;
+            foreach ($barangmasuk as $bm) : ?>
+                <tr>
+                    <td><?= $no++; ?></td>
+                    <td><?= $bm->nama_brg ?></td>
+                    <td><?= $bm->tgl_masuk ?></td>
+                    <td><?= $bm->hrg_brg ?></td>
+                    <td><?= $bm->nama_supplier ?></td>
+                    <td><?= $bm->stok_masuk ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+
+    </div>
+
+</div>
+<div class="container-fluid">
+    <h1 class="h5 mb-2 mt-4  text-danger "><?= $title3 ?></h1>
+
+    <div class="card shadow">
+        <table class="table table-hover card-shadow ">
+            <tr class="bg-secondary text-white rounded">
+                <td>#</td>
+                <td>Nama barang</td>
+                <td>Tgl keluar</td>
+                <td>Cabang</td>
+                <td>Unit</td>
+                <td>Qty</td>
+
+            </tr>
+            <?php $no = 1;
+            foreach ($barangkeluar as $bk) : ?>
+                <tr>
+                    <td><?= $no++; ?></td>
+                    <td><?= $bk->nama_brg ?></td>
+                    <td><?= $bk->tanggal_keluar ?></td>
+                    <td><?= $bk->cabang ?></td>
+                    <td><?= $bk->unit ?></td>
+                    <td><?= $bk->stok_keluar ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+
+    </div>
+
+</div>
 
 </div>
 <!-- End of Main Content -->

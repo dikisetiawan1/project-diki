@@ -26,8 +26,8 @@
                         <th class="text-center">#</th>
                         <th class="text-center">Nama Barang</th>
                         <th class="text-center">Tanggal Masuk</th>
-                        <th class="text-center">qty</th>
                         <th class="text-center">Supplier</th>
+                        <th class="text-center">qty</th>
                         <th class="text-center">Harga Barang</th>
 
                     </tr>
@@ -40,14 +40,20 @@
                             <td class="text-center"><?= $no++ ?></td>
                             <td><?= $bm->nama_brg ?></td>
                             <td><?= $bm->tgl_masuk ?></td>
-                            <td class="text-center"><?= $bm->stok_masuk ?></td>
                             <td><?= $bm->nama_supplier ?></td>
+                            <td class="text-center"><?= $bm->stok_masuk ?></td>
                             <td> Rp.<?= number_format($bm->hrg_brg, 0, ',', '.') ?></td>
                         </tr>
                     <?php endforeach; ?>
-                    <tr>
-                        <td colspan="5" class="text-center bold">Total</td>
-                    </tr>
+
+                    <?php
+                    foreach ($stoksum as $total) : ?>
+                        <tr>
+                            <td colspan="4" class="text-center bold">Total</td>
+                            <td><?= $total->total_stok ?></td>
+                            <td> Rp.<?= number_format($total->total_harga, 0, ',', '.') ?></td>
+                        </tr>
+                    <?php endforeach; ?>
 
                 </table>
                 <table width="100%">

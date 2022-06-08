@@ -18,50 +18,29 @@
 
                 <center class="mt-5">
                     <h1>PT PERTIWI GLOBAL</h1>
-                    <h2>Transaksi Barang Keluar</h2>
+                    <h2>Stok Barang Kosong</h2>
                 </center>
 
                 <table class="table table-bordered table-striped mt-5">
                     <tr>
                         <th class="text-center">#</th>
                         <th class="text-center">Nama Barang</th>
-                        <th class="text-center">Tanggal Keluar</th>
-                        <th class="text-center">Sekber</th>
-                        <th class="text-center">Unit</th>
-                        <th class="text-center">qty</th>
-                        <th class="text-center">Harga Barang</th>
-
+                        <th class="text-center">Kategori</th>
+                        <th class="text-center">Stok</th>
 
                     </tr>
 
-
-
-
                     <?php $no = 1;
-                    foreach ($barangkeluar as $bk) : ?>
+                    foreach ($cetakstok as $cs) : ?>
 
 
                         <tr>
                             <td class="text-center"><?= $no++ ?></td>
-                            <td><?= $bk->nama_brg ?></td>
-                            <td><?= $bk->tanggal_keluar ?></td>
-                            <td><?= $bk->cabang ?></td>
-                            <td><?= $bk->unit ?></td>
-                            <td class="text-center"><?= $bk->stok_keluar ?></td>
-                            <td> Rp.<?= number_format($bk->harga_brg, 0, ',', '.') ?></td>
-                        </tr>
-
-                    <?php endforeach; ?>
-                    <?php
-                    foreach ($stoksum as $total) : ?>
-                        <tr>
-                            <td colspan="5" class="text-center bold">Total</td>
-                            <td><?= $total->total_stok ?></td>
-                            <td> Rp.<?= number_format($total->total_harga, 0, ',', '.') ?></td>
+                            <td><?= $cs->nama_brg ?></td>
+                            <td><?= $cs->nama_kategori ?></td>
+                            <td class="text-center"><?= $cs->stok_brg ?></td>
                         </tr>
                     <?php endforeach; ?>
-
-
 
                 </table>
                 <table width="100%">

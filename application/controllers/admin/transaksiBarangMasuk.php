@@ -15,9 +15,8 @@ class Transaksibarangmasuk extends CI_Controller
 
         INNER JOIN tbl_data_barang ON tbl_barang_masuk.id_barang=tbl_data_barang.id_barang
         INNER JOIN tbl_supplier ON tbl_barang_masuk.id_supplier=tbl_supplier.id_supplier
-        
-        
-         ")->result();
+        ORDER BY tgl_masuk ASC 
+        ")->result();
         $this->load->model('inventoriModel');
 
         $data['barang'] = $this->inventoriModel->get_data('tbl_data_barang')->result();
@@ -106,6 +105,8 @@ class Transaksibarangmasuk extends CI_Controller
         
         
          ")->result();
+        $this->load->model('inventoriModel');
+        $data['stoksum'] = $this->inventoriModel->get_datasum()->result();
         $this->load->model('inventoriModel');
         $this->load->view('templates_admin/header');
 

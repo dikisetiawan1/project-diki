@@ -19,14 +19,14 @@
         </div>
     </div>
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Data stok barang</h1>
+    <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
 
 
     <!-- Content Row -->
     <div class="row">
         <div class="col-8">
 
-            <a href="<?= base_url('admin/stokBarang/cetakData') ?>" class="btn btn-warning mb-2 p-3"><i class="fas fa-print"></i></a>
+            <a href="<?= base_url('manajer/stokBarang/cetakData') ?>" class="btn btn-warning mb-2 p-3"><i class="fas fa-print"></i></a>
         </div>
 
         <div class="col-4">

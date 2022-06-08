@@ -45,7 +45,7 @@
 
 
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Ubah</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
 
                     </div>
 

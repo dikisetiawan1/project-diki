@@ -54,7 +54,7 @@
 
 
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary">Kirim</button>
+                            <button type="submit" class="btn btn-primary">Simpan</button>
                             <a href="<?= base_url('admin/databarang') ?>" class="btn btn-danger"> Cancel</a>
                         </div>
 
