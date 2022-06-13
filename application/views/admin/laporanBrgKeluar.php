@@ -11,8 +11,8 @@
         <div class="col-12">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Library</a></li>
+                    <li class="breadcrumb-item"><a href="#">Laporan</a></li>
+                    <li class="breadcrumb-item"><a href="#">Index</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Data</li>
                 </ol>
             </nav>
@@ -27,6 +27,7 @@
 
 
     <div class="card mx-auto  shadow d-flex align-items-center  " style="height: 60%; width:50%; ">
+        <h5 class="text-center mt-4">Laporan barang keluar per periode</h5>
         <form action="index.php " method="get">
             <div class="row g-3 align-items-center mt-5 mb-2 justify-content-center">
                 <div class="col-auto">

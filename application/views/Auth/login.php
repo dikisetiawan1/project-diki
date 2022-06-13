@@ -37,7 +37,7 @@
                             <div class="col-lg">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-1">PT. PERTIWI GROUP</h1>
+                                        <h1 class="h4 text-gray-900 mb-1">PT. PERTIWI RESOURCE</h1>
                                         <p class="mb-4">Sistem Inventory Logistik Pertiwi</p>
                                     </div>
                                     <form class="#" method="post" action="#">
