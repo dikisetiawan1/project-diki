@@ -17,30 +17,57 @@
             <div class="col-12">
 
                 <center class="mt-5">
-                    <h1>PT PERTIWI RESOURCES</h1>
+                    <h1>PT. PERTIWI RESOURCES</h1>
                     <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
+
                 </center>
 
                 <table class="table table-bordered table-striped mt-5">
                     <tr>
                         <th class="text-center">#</th>
-                        <th class="text-center">Nama</th>
-                        <th class="text-center">No.Tlp</th>
-                        <th class="text-center">Alamat</th>
-
+                        <th class="text-center">Nama Barang</th>
+                        <th class="text-center">Tanggal Masuk</th>
+                        <th class="text-center">Supplier</th>
+                        <th class="text-center">qty</th>
+                        <th class="text-center">Harga Barang</th>
 
                     </tr>
 
                     <?php $no = 1;
-                    foreach ($supplier as $cs) : ?>
+                    foreach ($datafilter as $bm) : ?>
 
 
                         <tr>
                             <td class="text-center"><?= $no++ ?></td>
-                            <td><?= $cs->nama_supplier ?></td>
-                            <td class="text-center"><?= $cs->no_tlp ?></td>
-                            <td><?= $cs->alamat ?></td>
+                            <td><?= $bm->nama_brg ?></td>
+                            <td><?= $bm->tgl_masuk ?></td>
+                            <td><?= $bm->nama_supplier ?></td>
+                            <td class="text-center"><?= $bm->stok_masuk ?></td>
+                            <td> Rp.<?= number_format($bm->hrg_brg, 0, ',', '.') ?></td>
                         </tr>
+                    <?php endforeach; ?>
+
+                    <tr>
+                        <th rowspan="4" class="text-center bold text-middle">Total Barang</th>
+                    </tr>
+
+
+                    <?php
+
+
+                    foreach ($disct as $d) : ?>
+
+                        <tr>
+
+                            <td colspan="2" class="text-center bold"><?= $d->nama_brg; ?></td>
+
+
+
+
+
+                        </tr>
+
+
                     <?php endforeach; ?>
 
                 </table>

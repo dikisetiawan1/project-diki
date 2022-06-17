@@ -17,8 +17,8 @@
             <div class="col-12">
 
                 <center class="mt-5">
-                    <h1>PT PERTIWI GLOBAL</h1>
-                    <h2>Data Barang</h2>
+                    <h1>PT PERTIWI RESOURCES</h1>
+                    <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
                 </center>
 
                 <table class="table table-bordered table-striped mt-5">

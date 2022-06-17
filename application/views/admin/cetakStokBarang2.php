@@ -24,22 +24,21 @@
                 <table class="table table-bordered table-striped mt-5">
                     <tr>
                         <th class="text-center">#</th>
-                        <th class="text-center">Nama</th>
-                        <th class="text-center">No.Tlp</th>
-                        <th class="text-center">Alamat</th>
-
+                        <th class="text-center">Nama Barang</th>
+                        <th class="text-center">Kategori</th>
+                        <th class="text-center">Stok</th>
 
                     </tr>
 
                     <?php $no = 1;
-                    foreach ($supplier as $cs) : ?>
+                    foreach ($cetakstok as $cs) : ?>
 
 
                         <tr>
                             <td class="text-center"><?= $no++ ?></td>
-                            <td><?= $cs->nama_supplier ?></td>
-                            <td class="text-center"><?= $cs->no_tlp ?></td>
-                            <td><?= $cs->alamat ?></td>
+                            <td><?= $cs->nama_brg ?></td>
+                            <td><?= $cs->nama_kategori ?></td>
+                            <td class="text-center"><?= $cs->stok_brg ?></td>
                         </tr>
                     <?php endforeach; ?>
 

@@ -6,9 +6,9 @@ class Dashboard extends CI_Controller
 
     public function index()
     {
-        $data['title'] = "Dashboar admin";
-        $data['title2'] = "Update 3 Transaksi barang masuk terakhir";
-        $data['title3'] = "Update 3 Transaksi barang keluar terakhir";
+        $data['title'] = "Dashboard admin";
+        $data['title2'] = "Tiga transaksi barang masuk terakhir - UPDATE";
+        $data['title3'] = "Tiga transaksi barang keluar terakhir - UPDATE";
         $data['scrumb'] = "Dashboard";
         $data['function'] = "Index";
 

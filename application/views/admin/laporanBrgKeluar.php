@@ -27,41 +27,37 @@
 
 
     <div class="card mx-auto  shadow d-flex align-items-center  " style="height: 60%; width:50%; ">
-        <h5 class="text-center mt-4">Laporan barang keluar per periode</h5>
-        <form action="index.php " method="get">
-            <div class="row g-3 align-items-center mt-5 mb-2 justify-content-center">
+        <h5 class="text-center mt-4">Laporan barang masuk per periode</h5>
+        <form action="<?= base_url('admin/laporan/filter2') ?>" method="POST" target="_blank">
+            <div class="row g-3 align-items-center mt-5 justify-content-center">
                 <div class="col-auto">
                     <label class="col-form-label">Periode</label>
                 </div>
                 <div class="col-auto">
-                    <input type="date" class="form-control" name="dari" required>
+                    <input type="date" class="form-control" name="tanggalawal" required>
                 </div>
                 <div class="col-auto">
                     -
                 </div>
                 <div class="col-auto">
-                    <input type="date" class="form-control" name="ke" required>
+                    <input type="date" class="form-control" name="tanggalakhir" required>
                 </div>
-                <div class="col-auto">
-                    <button class="btn btn-primary" type="submit">Cari</button>
-                </div>
-            </div>
-            <div class="row  g-3 align-items-center  mb-2 justify-content-center mt-5">
-
 
             </div>
-            <div class="row justify-content-center mt-5">
-                <button class="btn btn-primary" style="width: 38%;">Cetak</button>
+
+
+
+            <div class=" row justify-content-center mt-5">
+                <button class="btn btn-primary" style="width: 38%;" value="print">Cetak</button>
             </div>
-
-        </form>
-
-
-
     </div>
+</div>
 
 
-
+</form>
 
 </div>
-<!-- End of Main Content -->
+<!-- 
+            
+
+</div>

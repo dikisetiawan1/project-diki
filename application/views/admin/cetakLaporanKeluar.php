@@ -17,30 +17,33 @@
             <div class="col-12">
 
                 <center class="mt-5">
-                    <h1>PT PERTIWI RESOURCES</h1>
+                    <h1>PT. PERTIWI RESOURCES</h1>
                     <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
+
                 </center>
 
                 <table class="table table-bordered table-striped mt-5">
-                    <tr>
-                        <th class="text-center">#</th>
-                        <th class="text-center">Nama</th>
-                        <th class="text-center">No.Tlp</th>
-                        <th class="text-center">Alamat</th>
-
+                    <td>#</td>
+                    <td>Nama barang</td>
+                    <td>Tanggal keluar</td>
+                    <td>Sekber</td>
+                    <td>Unit</td>
+                    <td>Qty</td>
 
                     </tr>
-
                     <?php $no = 1;
-                    foreach ($supplier as $cs) : ?>
-
-
+                    foreach ($datafilter as $d) : ?>
                         <tr>
-                            <td class="text-center"><?= $no++ ?></td>
-                            <td><?= $cs->nama_supplier ?></td>
-                            <td class="text-center"><?= $cs->no_tlp ?></td>
-                            <td><?= $cs->alamat ?></td>
+                            <td><?= $no++; ?></td>
+                            <td><?= $d->nama_brg ?></td>
+                            <td><?= $d->tanggal_keluar ?></td>
+                            <td><?= $d->cabang ?></td>
+                            <td><?= $d->unit ?></td>
+                            <td><?= $d->stok_keluar ?></td>
+
                         </tr>
+
+
                     <?php endforeach; ?>
 
                 </table>
