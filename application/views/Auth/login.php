@@ -37,15 +37,18 @@
                             <div class="col-lg">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-1">PT. PERTIWI RESOURCE</h1>
+                                        <h1 class="h4 text-gray-900 mb-1">PT. PERTIWI RESOURCES</h1>
                                         <p class="mb-4">Sistem Inventory Logistik Pertiwi</p>
                                     </div>
-                                    <form class="#" method="post" action="#">
+                                    <?= $this->session->flashdata('pesan') ?>
+                                    <form class="#" method="POST" action="<?= base_url('auth'); ?>">
                                         <div class="form-group">
-                                            <input type="text" name="username" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Username..">
+                                            <input type="text" name="username" class="form-control form-control-user" id="username" aria-describedby="emailHelp" placeholder="Username..">
+                                            <?= form_error('username', '<small class="text-danger pl-3">', '</small>'); ?>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                                            <input type="password" name="password" class="form-control form-control-user" id="" placeholder="Password">
+                                            <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
                                         </div>
                                         <button type="submit" class="btn btn-primary " style="width: 100%;">Login</button>
 

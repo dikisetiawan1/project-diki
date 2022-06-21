@@ -87,7 +87,7 @@
 
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#" data-target="#collapsePages" aria-expanded="true" aria-controls="">
+        <a class="nav-link" href="<?= base_url('Auth/logout'); ?>">
             <i class="fas  fa-sign-out-alt fa-sm fa-fw mr-2 "></i>
             <span>Logout</span>
         </a>

@@ -104,15 +104,16 @@
 
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url('admin/ubahPassword') ?>" data-target="#collapsePages" aria-expanded="true" aria-controls="">
-            <i class="fa fa-fw fa-unlock"></i>
-            <span>Ubah password</span>
-        </a>
+            <a class="nav-link" href="<?= base_url('welcome/logout') ?>">
+                <i class="fa fa-fw fa-unlock"></i>
+                <span>Ubah password</span>
+            </a>
 
 
 
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#" data-target="#collapsePages" aria-expanded="true" aria-controls="">
+        <a class="nav-link" href="<?= base_url('auth/logout') ?>" data-target="#collapsePages" aria-expanded="true" aria-controls="">
             <i class="fas  fa-sign-out-alt fa-sm fa-fw mr-2 "></i>
             <span>Logout</span>
         </a>

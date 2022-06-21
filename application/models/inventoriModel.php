@@ -1,5 +1,6 @@
 <?php
 
+use LDAP\Result;
 
 class InventoriModel extends CI_Model
 {
@@ -29,10 +30,10 @@ class InventoriModel extends CI_Model
         return $this->db->query("SELECT sum(stok_keluar) AS total_stok, sum(harga_brg) AS total_harga FROM tbl_barang_keluar");
     }
 
-
+    //filter laporan barang masuk
     public function filter_bytanggal($tanggalawal, $tanggalakhir)
     {
-        $query = $this->db->query("SELECT tbl_barang_masuk.id_brgMasuk, tbl_barang_masuk.tgl_masuk,tbl_barang_masuk.stok_masuk,tbl_barang_masuk.hrg_brg,tbl_data_barang.nama_brg,tbl_supplier.nama_supplier
+        $query = $this->db->query("SELECT tbl_barang_masuk.id_brgMasuk, tbl_barang_masuk.tgl_masuk,tbl_barang_masuk.stok_masuk,tbl_barang_masuk.hrg_barang,tbl_data_barang.nama_brg,tbl_supplier.nama_supplier
         
         FROM tbl_barang_masuk
 
@@ -45,6 +46,12 @@ class InventoriModel extends CI_Model
 
         return $query->result();
     }
+    public function sum_stok_keluar($tanggalawal, $tanggalakhir)
+    {
+        return $this->db->query("SELECT sum(stok_keluar) AS total_stok FROM tbl_barang_keluar WHERE tanggal_keluar BETWEEN '$tanggalawal' and '$tanggalakhir' ")->result();
+    }
+
+    //filter laporan barang keluar
     public function filter_bytanggal2($tanggalawal, $tanggalakhir)
     {
         $query = $this->db->query("SELECT tbl_barang_keluar.id_brgKeluar,tbl_data_barang.nama_brg,tbl_barang_keluar.tanggal_keluar,tbl_barang_keluar.cabang,tbl_barang_keluar.unit,tbl_barang_keluar.stok_keluar,tbl_barang_keluar.harga_brg
@@ -56,5 +63,164 @@ class InventoriModel extends CI_Model
         ");
 
         return $query->result();
+    }
+
+    //data supplier
+    public function get_sup($limit, $start)
+    {
+
+
+        $this->db->select('*');
+        $this->db->from('tbl_supplier');
+        $this->db->limit($limit, $start);
+        $this->db->order_by('nama_supplier', 'ASC');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
+    public function countAllsupplier()
+    {
+        return $this->db->get('tbl_supplier')->num_rows();
+    }
+
+    //data barang 
+    public function get_brg($limit, $start)
+    {
+
+        $this->db->select('id_barang,stok_brg, nama_brg,hrg_brg,nama_kategori');
+        $this->db->from('tbl_data_barang');
+        $this->db->join('tbl_kategori', 'tbl_kategori.id_kategori=tbl_data_barang.id_kategori');
+        $this->db->limit($limit, $start);
+        $this->db->order_by('nama_brg', 'ASC');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+    public function countAllbrg()
+    {
+        return $this->db->get('tbl_data_barang')->num_rows();
+    }
+
+    //kategori barang
+    public function get_kat($limit, $start)
+    {
+
+
+        $this->db->select('*');
+        $this->db->from('tbl_kategori');
+        $this->db->limit($limit, $start);
+        $this->db->order_by('nama_kategori', 'ASC');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+    public function countAllkat()
+    {
+        return $this->db->get('tbl_kategori')->num_rows();
+    }
+
+    //transaksi barang masuk
+    public function get_brgmsk($limit, $start)
+    {
+
+
+        $this->db->select('id_brgMasuk,tgl_masuk,stok_masuk,hrg_barang,nama_brg,nama_supplier');
+        $this->db->from('tbl_barang_masuk');
+        $this->db->join('tbl_data_barang', 'tbl_data_barang.id_barang=tbl_barang_masuk.id_barang');
+        $this->db->join('tbl_supplier', 'tbl_supplier.id_supplier=tbl_barang_masuk.id_supplier');
+        $this->db->limit($limit, $start);
+        $this->db->order_by('tgl_masuk', 'DESC');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+    public function countAllbrgmsk()
+    {
+        return $this->db->get('tbl_barang_masuk')->num_rows();
+    }
+
+    //transaksi barang keluar
+
+    public function get_brgklr($limit, $start)
+    {
+
+        $this->db->select('id_brgKeluar,nama_brg,tanggal_keluar,cabang,unit,stok_keluar,harga_brg');
+        $this->db->from('tbl_barang_keluar');
+        $this->db->join('tbl_data_barang', 'tbl_data_barang.id_barang=tbl_barang_keluar.id_barang');
+        $this->db->limit($limit, $start);
+        $this->db->order_by('tanggal_keluar', 'DESC');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+    public function countAllbrgklr()
+    {
+        return $this->db->get('tbl_barang_keluar')->num_rows();
+    }
+    public function get_brgkosong($limit, $start)
+    {
+
+        $this->db->select('stok_brg,nama_brg,hrg_brg,nama_kategori');
+        $this->db->from('tbl_data_barang');
+        $this->db->join('tbl_kategori', 'tbl_kategori.id_kategori=tbl_data_barang.id_kategori');
+        $where = "stok_brg <= '0'";
+        $this->db->where($where);
+        $this->db->limit($limit, $start);
+        $this->db->order_by('nama_brg', 'ASC');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+    public function countAllbrgkosong()
+    {
+        return $this->db->get('tbl_data_barang')->num_rows();
+    }
+    public function get_brgready($limit, $start)
+    {
+        $this->db->select('stok_brg,nama_brg,hrg_brg,nama_kategori');
+        $this->db->from('tbl_data_barang');
+        $this->db->join('tbl_kategori', 'tbl_kategori.id_kategori=tbl_data_barang.id_kategori');
+        $where = "stok_brg > '0'";
+        $this->db->where($where);
+        $this->db->limit($limit, $start);
+        $this->db->order_by('nama_brg', 'ASC');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+    public function countAllbrgready()
+    {
+        return $this->db->get('tbl_data_barang')->num_rows();
+    }
+    // get users pagination
+    public function get_user($limit, $start)
+    {
+
+
+        $this->db->select('*');
+        $this->db->from('user');
+        $this->db->limit($limit, $start);
+        $this->db->order_by('name', 'ASC');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
+    public function countAlluser()
+    {
+        return $this->db->get('user')->num_rows();
+    }
+
+
+
+    // login
+    public function cek_login()
+    {
+        $username = set_Value('username');
+        $password = set_Value('password');
+
+        $result = $this->db->where('username', $username)
+            ->where('password', md5($password))
+            ->limit(1)
+            ->get('user');
+
+        if ($result->num_rows() > 0) {
+            return $result->row();
+        } else {
+            return FALSE;
+        }
     }
 }

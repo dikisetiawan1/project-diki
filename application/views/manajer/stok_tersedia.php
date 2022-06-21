@@ -47,13 +47,13 @@
                 <td>Stok</td>
                 <td>Aksi</td>
             </tr>
-            <?php $no = 1;
-            foreach ($stok_sedia as $s) : ?>
+            <?php
+            foreach ($stok_ready as $s) : ?>
                 <tr>
-                    <td><?= $no++; ?></td>
-                    <td><?= $s->nama_brg ?></td>
-                    <td><?= $s->nama_kategori ?></td>
-                    <td><?= $s->stok_brg ?></td>
+                    <td><?= ++$start; ?></td>
+                    <td><?= $s['nama_brg'] ?></td>
+                    <td><?= $s['nama_kategori'] ?></td>
+                    <td><?= $s['stok_brg'] ?></td>
 
                     <td>
 
@@ -67,14 +67,11 @@
 
 
     </div>
-    <nav aria-label="Page navigation example fixed-bottom">
-        <ul class="pagination justify-content-end p-4">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-    </nav>
+    <div class="container-fluid mt-3">
+
+        <?= $this->pagination->create_links(); ?>
+    </div>
+
 
 
 </div>

@@ -53,20 +53,20 @@
                 <td>Supplier</td>
                 <td>Aksi</td>
             </tr>
-            <?php $no = 1;
+            <?php
             foreach ($barangmasuk as $bm) : ?>
                 <tr>
-                    <td><?= $no++; ?></td>
-                    <td><?= $bm->nama_brg ?></td>
-                    <td><?= $bm->tgl_masuk ?></td>
-                    <td><?= $bm->hrg_brg ?></td>
-                    <td><?= $bm->stok_masuk ?></td>
-                    <td><?= $bm->nama_supplier ?></td>
+                    <td><?= ++$start; ?></td>
+                    <td><?= $bm['nama_brg'] ?></td>
+                    <td><?= $bm['tgl_masuk'] ?></td>
+                    <td><?= $bm['hrg_barang'] ?></td>
+                    <td><?= $bm['stok_masuk'] ?></td>
+                    <td><?= $bm['nama_supplier'] ?></td>
 
 
                     <td>
                         <a href="#" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-placement="top" title="Detail data"><i class="fa fa-fw fa-info-circle"></i></i>
-                            <a onclick=" return confirm('yakin di hapus?')" href="<?= base_url('admin/transaksibarangkeluar/deleteData/' . $bm->id_brgMasuk) ?>" class="btn btn-danger"><i class="fa fa-fw fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Hapus data"></i></a>
+                            <a onclick=" return confirm('yakin di hapus?')" href="<?= base_url('admin/transaksibarangkeluar/deleteData/' . $bm['id_brgMasuk']) ?>" class="btn btn-danger"><i class="fa fa-fw fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Hapus data"></i></a>
 
                     </td>
                 </tr>
@@ -74,15 +74,11 @@
         </table>
 
     </div>
-    <nav aria-label="Page navigation example fixed-bottom">
-        <ul class="pagination justify-content-end p-4">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-    </nav>
+    <div class="container-fluid mt-3">
+
+        <?= $this->pagination->create_links(); ?>
+    </div>
+
 
     <div class="container">
 
@@ -111,21 +107,24 @@
                                         <option value="<?= $br->id_barang ?>"><?= $br->nama_brg ?></option>
                                     <?php endforeach; ?>
                                 </select>
-                                <?= form_error('id_barang', '<div class="text-small text-danger"></div>') ?>
+                                <?= form_error('id_barang', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                             <div class="mb-3">
                                 <label for="kodeBarang" class="form-label">Tgl masuk</label>
                                 <input type="date" class="form-control" id="tgl_masuk" name="tgl_masuk" placeholder="Input tgl masuk barang">
+                                <?= form_error('tgl_masuk', '<small class="text-danger pl-3">', '</small>'); ?>
 
                             </div>
                             <div class="mb-3">
                                 <label for="kodeBarang" class="form-label">Harga barang</label>
-                                <input type="text" class="form-control" id="hrg_brg" name="hrg_brg" placeholder="Input harga barang">
+                                <input type="text" class="form-control" id="hrg_barang" name="hrg_barang" placeholder="Input harga barang">
+                                <?= form_error('hrg_barang', '<small class="text-danger pl-3">', '</small>'); ?>
 
                             </div>
                             <div class="mb-3">
                                 <label for="kodeBarang" class="form-label">Qty</label>
                                 <input type="text" class="form-control" id="stok_masuk" name="stok_masuk" placeholder="Input qty barang">
+                                <?= form_error('stok_masuk', '<small class="text-danger pl-3">', '</small>'); ?>
 
                             </div>
                             <div class="mb-3">
@@ -138,7 +137,7 @@
                                         <option value="<?= $su->id_supplier ?>"><?= $su->nama_supplier ?></option>
                                     <?php endforeach; ?>
                                 </select>
-                                <?= form_error('id_supplier', '<div class="text-small text-danger"></div>') ?>
+                                <?= form_error('id_supplier', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
 
                             <div class="modal-footer">

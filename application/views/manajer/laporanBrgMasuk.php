@@ -11,8 +11,8 @@
         <div class="col-12">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Library</a></li>
+                    <li class="breadcrumb-item"><a href="#">Laporan</a></li>
+                    <li class="breadcrumb-item"><a href="#">Index</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Data</li>
                 </ol>
             </nav>
@@ -27,40 +27,37 @@
 
 
     <div class="card mx-auto  shadow d-flex align-items-center  " style="height: 60%; width:50%; ">
-        <form action="<?= base_url('admin/laporan/L_barangMasuk') ?>" method="POST" target="_blank">
-            <div class="row g-3 align-items-center mt-5 mb-2 justify-content-center">
+        <h5 class="text-center mt-4">Laporan barang masuk per periode</h5>
+        <form action="<?= base_url('manajer/laporan/filter') ?>" method="POST" target="_blank">
+            <div class="row g-3 align-items-center mt-5 justify-content-center">
                 <div class="col-auto">
                     <label class="col-form-label">Periode</label>
                 </div>
                 <div class="col-auto">
-                    <input type="date" class="form-control" name="dari" required>
+                    <input type="date" class="form-control" name="tanggalawal" required>
                 </div>
                 <div class="col-auto">
                     -
                 </div>
                 <div class="col-auto">
-                    <input type="date" class="form-control" name="ke" required>
+                    <input type="date" class="form-control" name="tanggalakhir" required>
                 </div>
-                <div class="col-auto">
-                    <button class="btn btn-primary" type="submit">Cari</button>
-                </div>
-            </div>
-            <div class="row  g-3 align-items-center  mb-2 justify-content-center mt-5">
-
 
             </div>
-            <div class="row justify-content-center mt-5">
-                <button class="btn btn-primary" style="width: 38%;">Cetak</button>
+
+
+
+            <div class=" row justify-content-center mt-5">
+                <button class="btn btn-primary" style="width: 38%;" value="print">Cetak</button>
             </div>
-
-        </form>
-
-
-
     </div>
+</div>
 
 
-
+</form>
 
 </div>
-<!-- End of Main Content -->
+<!-- 
+            
+
+</div>

@@ -44,16 +44,16 @@
                 <td>Alamat</td>
                 <td>Aksi</td>
             </tr>
-            <?php $no = 1;
+            <?php
             foreach ($supplier as $su) : ?>
                 <tr>
-                    <td><?= $no++; ?></td>
-                    <td><?= $su->nama_supplier ?></td>
-                    <td><?= $su->no_tlp ?></td>
-                    <td><?= $su->alamat ?></td>
+                    <td><?= ++$start; ?></td>
+                    <td><?= $su['nama_supplier']; ?></td>
+                    <td><?= $su['no_tlp']; ?></td>
+                    <td><?= $su['alamat']; ?></td>
                     <td>
-                        <a href="<?= base_url('admin/supplier/updateData/' . $su->id_supplier)  ?>" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Edit data"><i class="fas fa-fw fa-edit"></i></a>
-                        <a onclick=" return confirm('yakin di hapus?')" href="<?= base_url('admin/supplier/deleteData/' . $su->id_supplier) ?>" class="btn btn-danger"><i class="fa fa-fw fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Hapus data"></i></a>
+                        <a href="<?= base_url('admin/supplier/updateData/' . $su['id_supplier'])  ?>" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Edit data"><i class="fas fa-fw fa-edit"></i></a>
+                        <a onclick=" return confirm('yakin di hapus?')" href="<?= base_url('admin/supplier/deleteData/' . $su['id_supplier']) ?>" class="btn btn-danger"><i class="fa fa-fw fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Hapus data"></i></a>
                     </td>
                 </tr>
             <?php endforeach; ?>
@@ -62,14 +62,11 @@
 
 
     </div>
-    <nav aria-label="Page navigation example fixed-bottom">
-        <ul class="pagination justify-content-end p-4">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-    </nav>
+    <div class="container-fluid mt-3">
+
+        <?= $this->pagination->create_links(); ?>
+    </div>
+
 
 
     <div class="container">
@@ -91,18 +88,19 @@
                             <div class="mb-3">
                                 <label for="kodeBarang" class="form-label">Nama supplier</label>
                                 <input type="text" class="form-control" id="nama_supplier" name="nama_supplier" placeholder="Input nama supplier">
+                                <?= form_error('nama_supplier', '<small class="text-danger pl-3">', '</small>'); ?>
 
                             </div>
 
                             <div class="mb-3">
                                 <label for="jenisBarang" class="form-label">No.Tlp</label>
                                 <input type="text" class="form-control" id="no_tlp" name="no_tlp" placeholder="Input No handphone">
-
+                                <?= form_error('no_tlp', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                             <div class="mb-3">
                                 <label for="jenisBarang" class="form-label">Alamat</label>
                                 <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Input alamat">
-
+                                <?= form_error('alamat', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
 
                             <div class="modal-footer">

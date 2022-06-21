@@ -27,7 +27,7 @@
 
 
     <div class="card mx-auto  shadow d-flex align-items-center  " style="height: 60%; width:50%; ">
-        <h5 class="text-center mt-4">Laporan barang masuk per periode</h5>
+        <h5 class="text-center mt-4">Laporan barang keluar per periode</h5>
         <form action="<?= base_url('admin/laporan/filter2') ?>" method="POST" target="_blank">
             <div class="row g-3 align-items-center mt-5 justify-content-center">
                 <div class="col-auto">

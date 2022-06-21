@@ -132,7 +132,7 @@
                     <td><?= $no++; ?></td>
                     <td><?= $bm->nama_brg ?></td>
                     <td><?= $bm->tgl_masuk ?></td>
-                    <td><?= $bm->hrg_brg ?></td>
+                    <td><?= $bm->hrg_barang ?></td>
                     <td><?= $bm->nama_supplier ?></td>
                     <td><?= $bm->stok_masuk ?></td>
                 </tr>

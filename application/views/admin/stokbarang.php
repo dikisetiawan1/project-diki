@@ -19,7 +19,7 @@
         </div>
     </div>
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Data stok barang</h1>
+    <h1 class="h3 mb-4 text-gray-800">Stok barang kosong</h1>
 
 
     <!-- Content Row -->
@@ -48,12 +48,12 @@
                 <td>Aksi</td>
             </tr>
             <?php $no = 1;
-            foreach ($stok as $s) : ?>
+            foreach ($stok_kosong as $s) : ?>
                 <tr>
-                    <td><?= $no++; ?></td>
-                    <td><?= $s->nama_brg ?></td>
-                    <td><?= $s->nama_kategori ?></td>
-                    <td><?= $s->stok_brg ?></td>
+                    <td><?= ++$start; ?></td>
+                    <td><?= $s['nama_brg'] ?></td>
+                    <td><?= $s['nama_kategori'] ?></td>
+                    <td><?= $s['stok_brg'] ?></td>
 
                     <td>
 
@@ -64,17 +64,11 @@
             <?php endforeach; ?>
 
         </table>
-
-
     </div>
-    <nav aria-label="Page navigation example fixed-bottom">
-        <ul class="pagination justify-content-end p-4">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-    </nav>
+    <div class="container-fluid mt-3">
+
+        <?= $this->pagination->create_links(); ?>
+    </div>
 
 
 </div>

@@ -58,16 +58,16 @@
 
 
                 <tr>
-                    <td><?= $no++; ?></td>
-                    <td><?= $br->nama_brg ?></td>
-                    <td><?= $br->nama_kategori ?></td>
-                    <td><?= $br->hrg_brg ?></td>
-                    <td><?= $br->stok_brg ?></td>
+                    <td><?= ++$start; ?></td>
+                    <td><?= $br['nama_brg']; ?></td>
+                    <td><?= $br['nama_kategori']; ?></td>
+                    <td><?= $br['hrg_brg']; ?></td>
+                    <td><?= $br['stok_brg']; ?></td>
 
 
                     <td>
-                        <a href="<?= base_url('admin/dataBarang/updateData/' . $br->id_barang) ?>" class="btn btn-primary" data-placement="top" title="Edit data"><i class="fas fa-fw fa-edit"></i></a>
-                        <a onclick=" return confirm('yakin di hapus?')" href="<?= base_url('admin/databarang/deleteData/' . $br->id_barang) ?>" class="btn btn-danger"><i class="fa fa-fw fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Hapus data"></i></a>
+                        <a href="<?= base_url('admin/dataBarang/updateData/' . $br['id_barang']) ?>" class="btn btn-primary" data-placement="top" title="Edit data"><i class="fas fa-fw fa-edit"></i></a>
+                        <a onclick=" return confirm('yakin di hapus?')" href="<?= base_url('admin/databarang/deleteData/' .  $br['id_barang']) ?>" class="btn btn-danger"><i class="fa fa-fw fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Hapus data"></i></a>
                     </td>
                 </tr>
             <?php endforeach; ?>
@@ -75,15 +75,13 @@
 
 
     </div>
-    <nav aria-label="Page navigation example fixed-bottom">
-        <ul class="pagination justify-content-end p-4">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-    </nav>
+
+    <!-- pagination -->
+    <div class="container-fluid mt-3 ">
+
+        <?= $this->pagination->create_links(); ?>
+    </div>
+
     <!-- Vertically centered modal -->
 
     <div class="container">
@@ -105,11 +103,13 @@
                             <div class="mb-3">
                                 <label for="kodeBarang" class="form-label">Kode Barang</label>
                                 <input type="text" class="form-control" id="id_barang" name="id_barang" placeholder="Input kode barang">
+                                <?= form_error('id_barang', '<small class="text-danger pl-3">', '</small>'); ?>
 
                             </div>
                             <div class="mb-3">
                                 <label for="jenisBarang" class="form-label">Nama barang</label>
                                 <input type="text" class="form-control" id="nama_brg" name="nama_brg" placeholder="Input nama barang">
+                                <?= form_error('nama_brg', '<small class="text-danger pl-3">', '</small>'); ?>
 
                             </div>
                             <div class="mb-3">
@@ -122,11 +122,12 @@
                                         <option value="<?= $k->id_kategori ?>"><?= $k->nama_kategori ?></option>
                                     <?php endforeach; ?>
                                 </select>
-                                <?= form_error('id_barang', '<div class="text-small text-danger"></div>') ?>
+                                <?= form_error('id_kategori', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                             <div class="mb-3">
                                 <label for="kodeBarang" class="form-label">Harga Barang</label>
                                 <input type="text" class="form-control" id="hrg_brg" name="hrg_brg" placeholder="Input harga barang">
+                                <?= form_error('hrg_brg', '<small class="text-danger pl-3">', '</small>'); ?>
 
                             </div>
 

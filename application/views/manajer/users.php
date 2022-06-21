@@ -47,15 +47,15 @@
                 <td>Akses</td>
                 <td>Aksi</td>
             </tr>
-            <?php $no = 1;
+            <?php
             foreach ($query as $us) : ?>
                 <tr>
-                    <td><?= $no++; ?></td>
-                    <td><?= $us->name ?></td>
-                    <td><?= $us->username ?></td>
-                    <td><?= $us->jenis_kelamin ?></td>
-                    <td><?= $us->tgl_masuk ?></td>
-                    <td><img style="width: 75px; " src="<?= base_url() . 'assets/photo/' . $us->image ?>"></td>
+                    <td><?= ++$start; ?></td>
+                    <td><?= $us['name'] ?></td>
+                    <td><?= $us['username'] ?></td>
+                    <td><?= $us['jenis_kelamin'] ?></td>
+                    <td><?= $us['tgl_masuk'] ?></td>
+                    <td><img style="width: 75px; " src="<?= base_url() . 'assets/photo/' . $us['image'] ?>"></td>
                     <?php
                     $admin = 'Admin Logistik';
                     $pegawai = 'Manajer';
@@ -63,7 +63,7 @@
 
                     <td>
 
-                        <?php if ($us->hak_akses == '1') {
+                        <?php if ($us['hak_akses'] == '1') {
 
 
                             echo "$admin";
@@ -76,8 +76,8 @@
                         ?>
                     </td>
                     <td>
-                        <a href="<?= base_url('manajer/users/updateData/' . $us->id)  ?>" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Edit data"><i class="fas fa-fw fa-edit"></i></a>
-                        <a onclick=" return confirm('yakin di hapus?')" href="<?= base_url('manajer/users/deleteData/' . $us->id) ?>" class="btn btn-danger"><i class="fa fa-fw fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Hapus data"></i></a>
+                        <a href="<?= base_url('manajer/users/updateData/' . $us['id'])  ?>" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Edit data"><i class="fas fa-fw fa-edit"></i></a>
+                        <a onclick=" return confirm('yakin di hapus?')" href="<?= base_url('manajer/users/deleteData/' . $us['id']) ?>" class="btn btn-danger"><i class="fa fa-fw fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Hapus data"></i></a>
                     </td>
                 </tr>
             <?php endforeach; ?>
@@ -86,14 +86,10 @@
 
 
     </div>
-    <nav aria-label="Page navigation example fixed-bottom">
-        <ul class="pagination justify-content-end p-4">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-    </nav>
+    <div class="container-fluid mt-3">
+
+        <?= $this->pagination->create_links(); ?>
+    </div>
 
 
     <div class="container">
@@ -115,12 +111,14 @@
                             <div class="mb-3">
                                 <label for="users" class="form-label">Nama user</label>
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Input nama users">
+                                <?= form_error('name', '<small class="text-danger pl-3">', '</small>'); ?>
 
                             </div>
 
                             <div class="mb-3">
                                 <label for="username" class="form-label">Username</label>
                                 <input type="text" class="form-control" id="username" name="username" placeholder="Input Username">
+                                <?= form_error('username', '<small class="text-danger pl-3">', '</small>'); ?>
 
                             </div>
                             <div class="mb-3">
@@ -130,23 +128,25 @@
                                     <option value="Laki-laki">Laki-Laki</option>
                                     <option value="perempuan">Perempuan</option>
                                 </select>
-
+                                <?= form_error('jenis_kelamin', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
                                 <input type="password" class="form-control" id="password" name="password" placeholder="Input password">
+                                <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
 
                             </div>
                             <div class="mb-3">
                                 <label for="tgl masuk" class="form-label">Tanggal masuk</label>
                                 <input type="date" class="form-control" id="tgl_masuk" name="tgl_masuk" placeholder="Input tanggal masuk">
+                                <?= form_error('tgl_masuk', '<small class="text-danger pl-3">', '</small>'); ?>
 
                             </div>
                             <div class="mb-3">
                                 <label for="" class="form-label">Photo</label>
 
                                 <input type="file" name="image" class="form-control">
-
+                                <?= form_error('image', '<small class="text-danger pl-3">', '</small>'); ?>
 
 
 
@@ -160,7 +160,7 @@
                                     <?php endforeach; ?>
 
                                 </select>
-
+                                <?= form_error('hak_akses', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
 
                             <div class="modal-footer">
