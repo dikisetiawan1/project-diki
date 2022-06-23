@@ -54,9 +54,13 @@ class Stokbarang extends CI_Controller
         //initialize
 
         $this->pagination->initialize($config);
+        $data['keyword'] = $this->input->post('keyword');
+        if ($this->input->post('submit')) {
+            $data['keyword'];
+        }
 
         $data['start'] = $this->uri->segment(4);
-        $data['stok_kosong'] = $this->inventoriModel->get_brgkosong($config['per_page'], $data['start']);
+        $data['stok_kosong'] = $this->inventoriModel->get_brgkosong($config['per_page'], $data['start'], $data['keyword']);
 
         //pagination end
         $this->load->view('templates_admin/header');
@@ -117,9 +121,12 @@ class Stokbarang extends CI_Controller
         //initialize
 
         $this->pagination->initialize($config);
-
+        $data['keyword'] = $this->input->post('keyword');
+        if ($this->input->post('submit')) {
+            $data['keyword'];
+        }
         $data['start'] = $this->uri->segment(5);
-        $data['stok_ready'] = $this->inventoriModel->get_brgready($config['per_page'], $data['start']);
+        $data['stok_ready'] = $this->inventoriModel->get_brgready($config['per_page'], $data['start'], $data['keyword']);
 
         $this->load->view('templates_admin/header');
         $this->load->view('templates_admin/sidebar');

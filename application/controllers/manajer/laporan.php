@@ -9,7 +9,6 @@ class Laporan extends CI_Controller
 
         parent::__construct();
         $this->load->model('inventoriModel');
-        parent::__construct();
         if ($this->session->userdata('hak_akses') != '2') {
             $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -20,7 +19,7 @@ class Laporan extends CI_Controller
 
 
 
-    public function L_barangMasuk()
+    public function barangMasuk()
     {
 
 
@@ -62,7 +61,7 @@ class Laporan extends CI_Controller
         $this->load->view('manajer/cetakLaporanMasuk', $data);
     }
 
-    public function L_barangKeluar()
+    public function barangKeluar()
     {
         $data['title'] = "Laporan barang keluar";
         $this->load->view('templates_manajer/header');

@@ -52,9 +52,13 @@ class Kategoribarang extends CI_Controller
         //initialize
 
         $this->pagination->initialize($config);
-
+        // ambil data keyword
+        $data['keyword'] = $this->input->post('keyword');
+        if ($this->input->post('submit')) {
+            $data['keyword'];
+        }
         $data['start'] = $this->uri->segment(4);
-        $data['kategori'] = $this->inventoriModel->get_kat($config['per_page'], $data['start']);
+        $data['kategori'] = $this->inventoriModel->get_kat($config['per_page'], $data['start'], $data['keyword']);
 
         $this->load->view('templates_admin/header');
         $this->load->view('templates_admin/sidebar');

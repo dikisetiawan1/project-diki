@@ -31,7 +31,12 @@
             <a href="<?= base_url('admin/supplier/cetakData') ?>" class="btn btn-warning mb-2 ml-1 pt-2 pb-3"><i class="fas fa-print"></i></a>
             <a href="#" class="btn btn-success mb-2 ml-1 pt-2 pb-3 "><i class="fas fa-file-excel"></i></a>
         </div>
-
+        <div class="col-4">
+            <form class="d-flex" action="<?= base_url('admin/supplier'); ?>" method="post">
+                <input class="form-control me-2" type="text" placeholder="Search keyword.." aria-label="Search" name="keyword" autofocus>
+                <input class="btn btn-outline-success ml-2" type="submit" name="submit"></input>
+            </form>
+        </div>
     </div>
     <?= $this->session->flashdata('pesan') ?>
 

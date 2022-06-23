@@ -51,12 +51,16 @@ class Transaksibarangmasuk extends CI_Controller
         //initialize
 
         $this->pagination->initialize($config);
-
+        $data['keyword'] = $this->input->post('keyword');
+        if ($this->input->post('submit')) {
+            $data['keyword'];
+        }
         $data['start'] = $this->uri->segment(4);
-        $data['barangmasuk'] = $this->inventoriModel->get_brgmsk($config['per_page'], $data['start']);
+        $data['barangmasuk'] = $this->inventoriModel->get_brgmsk($config['per_page'], $data['start'], $data['keyword']);
+        $data['keyword'] = $this->input->post('keyword');
 
 
-
+        // ambil data barang & supplier
         $data['barang'] = $this->inventoriModel->get_data('tbl_data_barang')->result();
         $data['supplier'] = $this->inventoriModel->get_data('tbl_supplier')->result();
 

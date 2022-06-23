@@ -58,8 +58,13 @@ class Databarang extends CI_Controller
 
         $this->pagination->initialize($config);
 
+        // ambil data keyword
+        $data['keyword'] = $this->input->post('keyword');
+        if ($this->input->post('submit')) {
+            $data['keyword'];
+        }
         $data['start'] = $this->uri->segment(4);
-        $data['barang'] = $this->inventoriModel->get_brg($config['per_page'], $data['start']);
+        $data['barang'] = $this->inventoriModel->get_brg($config['per_page'], $data['start'], $data['keyword']);
 
 
 

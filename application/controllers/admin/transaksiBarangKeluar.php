@@ -47,9 +47,12 @@ class Transaksibarangkeluar extends CI_Controller
         //initialize
 
         $this->pagination->initialize($config);
-
+        $data['keyword'] = $this->input->post('keyword');
+        if ($this->input->post('submit')) {
+            $data['keyword'];
+        }
         $data['start'] = $this->uri->segment(4);
-        $data['barangkeluar'] = $this->inventoriModel->get_brgklr($config['per_page'], $data['start']);
+        $data['barangkeluar'] = $this->inventoriModel->get_brgklr($config['per_page'], $data['start'], $data['keyword']);
 
 
         $data['masterbarang'] = $this->db->query("SELECT * FROM tbl_data_barang WHERE stok_brg > 0")->result();

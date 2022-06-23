@@ -28,6 +28,12 @@
             <a href="#" class="btn btn-primary mb-2" data-toggle="modal" data-target="#myModal">Tambah data</a>
 
         </div>
+        <div class="col-4">
+            <form class="d-flex" action="<?= base_url('admin/kategoribarang'); ?>" method="post">
+                <input class="form-control me-2" type="text" placeholder="Search keyword.." aria-label="Search" name="keyword" autofocus>
+                <input class="btn btn-outline-success ml-2" type="submit" name="submit"></input>
+            </form>
+        </div>
 
     </div>
     <?= $this->session->flashdata('pesan') ?>

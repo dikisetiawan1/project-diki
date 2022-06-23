@@ -66,9 +66,11 @@ class InventoriModel extends CI_Model
     }
 
     //data supplier
-    public function get_sup($limit, $start)
+    public function get_sup($limit, $start, $keyword = null)
     {
-
+        if ($keyword) {
+            $this->db->like('nama_supplier', $keyword);
+        }
 
         $this->db->select('*');
         $this->db->from('tbl_supplier');
@@ -84,8 +86,11 @@ class InventoriModel extends CI_Model
     }
 
     //data barang 
-    public function get_brg($limit, $start)
+    public function get_brg($limit, $start, $keyword = null)
     {
+        if ($keyword) {
+            $this->db->like('nama_brg', $keyword);
+        }
 
         $this->db->select('id_barang,stok_brg, nama_brg,hrg_brg,nama_kategori');
         $this->db->from('tbl_data_barang');
@@ -101,9 +106,11 @@ class InventoriModel extends CI_Model
     }
 
     //kategori barang
-    public function get_kat($limit, $start)
+    public function get_kat($limit, $start, $keyword = null)
     {
-
+        if ($keyword) {
+            $this->db->like('nama_kategori', $keyword);
+        }
 
         $this->db->select('*');
         $this->db->from('tbl_kategori');
@@ -118,9 +125,11 @@ class InventoriModel extends CI_Model
     }
 
     //transaksi barang masuk
-    public function get_brgmsk($limit, $start)
+    public function get_brgmsk($limit, $start, $keyword = null)
     {
-
+        if ($keyword) {
+            $this->db->like('nama_brg', $keyword);
+        }
 
         $this->db->select('id_brgMasuk,tgl_masuk,stok_masuk,hrg_barang,nama_brg,nama_supplier');
         $this->db->from('tbl_barang_masuk');
@@ -138,8 +147,11 @@ class InventoriModel extends CI_Model
 
     //transaksi barang keluar
 
-    public function get_brgklr($limit, $start)
+    public function get_brgklr($limit, $start, $keyword = null)
     {
+        if ($keyword) {
+            $this->db->like('nama_brg', $keyword);
+        }
 
         $this->db->select('id_brgKeluar,nama_brg,tanggal_keluar,cabang,unit,stok_keluar,harga_brg');
         $this->db->from('tbl_barang_keluar');
@@ -153,8 +165,11 @@ class InventoriModel extends CI_Model
     {
         return $this->db->get('tbl_barang_keluar')->num_rows();
     }
-    public function get_brgkosong($limit, $start)
+    public function get_brgkosong($limit, $start, $keyword = null)
     {
+        if ($keyword) {
+            $this->db->like('nama_brg', $keyword);
+        }
 
         $this->db->select('stok_brg,nama_brg,hrg_brg,nama_kategori');
         $this->db->from('tbl_data_barang');
@@ -170,8 +185,14 @@ class InventoriModel extends CI_Model
     {
         return $this->db->get('tbl_data_barang')->num_rows();
     }
-    public function get_brgready($limit, $start)
+    public function get_brgready($limit, $start, $keyword = null)
     {
+
+
+        if ($keyword) {
+            $this->db->like('nama_brg', $keyword);
+        }
+
         $this->db->select('stok_brg,nama_brg,hrg_brg,nama_kategori');
         $this->db->from('tbl_data_barang');
         $this->db->join('tbl_kategori', 'tbl_kategori.id_kategori=tbl_data_barang.id_kategori');

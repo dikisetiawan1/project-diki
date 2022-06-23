@@ -43,12 +43,23 @@
                                     <?= $this->session->flashdata('pesan') ?>
                                     <form class="#" method="POST" action="<?= base_url('auth'); ?>">
                                         <div class="form-group">
-                                            <input type="text" name="username" class="form-control form-control-user" id="username" aria-describedby="emailHelp" placeholder="Username..">
+                                            <label>Username</label>
+                                            <input type="text" name="username" class="form-control form-control-user" id="username" aria-describedby="emailHelp" placeholder="Username.." autofocus>
                                             <?= form_error('username', '<small class="text-danger pl-3">', '</small>'); ?>
                                         </div>
                                         <div class="form-group">
+                                            <label>Password</label>
                                             <input type="password" name="password" class="form-control form-control-user" id="" placeholder="Password">
                                             <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label>User akses</label>
+                                            <select class="form-control " name="">
+                                                <option>--Pilih user--</option>
+                                                <option>Admin</option>
+                                                <option>Manajer</option>
+                                            </select>
+
                                         </div>
                                         <button type="submit" class="btn btn-primary " style="width: 100%;">Login</button>
 

@@ -32,9 +32,9 @@
             <a href="<?= base_url('admin/transaksiBarangMasuk/cetakData') ?>" class="btn btn-warning mb-2 pt-2 pb-3"><i class="fas fa-print"></i></a>
         </div>
         <div class="col-4">
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success ml-2" type="submit">Search</button>
+            <form class="d-flex" action="<?= base_url('admin/transaksibarangmasuk'); ?>" method="post">
+                <input class="form-control me-2" type="text" placeholder="Search keyword.." aria-label="Search" name="keyword" autofocus>
+                <input class="btn btn-outline-success ml-2" type="submit" name="submit"></input>
             </form>
         </div>
 

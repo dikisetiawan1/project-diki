@@ -41,8 +41,8 @@
         <div id="collapseUtilities2" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Laporan</h6>
-                <a class="collapse-item" href="<?= base_url('manajer/laporan/L_barangMasuk') ?>">Laporan barang masuk</a>
-                <a class="collapse-item" href="<?= base_url('manajer/laporan/L_barangKeluar') ?>">Laporan barang keluar</a>
+                <a class="collapse-item" href="<?= base_url('manajer/laporan/barangMasuk') ?>">Laporan barang masuk</a>
+                <a class="collapse-item" href="<?= base_url('manajer/laporan/barangKeluar') ?>">Laporan barang keluar</a>
             </div>
         </div>
 
