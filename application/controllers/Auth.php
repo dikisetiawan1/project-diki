@@ -7,9 +7,9 @@ class Auth extends CI_Controller
 
 
 
-
     public function index()
     {
+
 
 
         $this->_rules();
@@ -24,13 +24,15 @@ class Auth extends CI_Controller
             $data = array(
 
                 $username = $this->input->post('username'),
-                $password = $this->input->post('password')
+                $password = $this->input->post('password'),
+                $akses = $this->input->post('hak_akses')
             );
             $this->load->model('inventoriModel');
             $cek = $this->inventoriModel->cek_login($username, $password);
 
 
             if ($cek == FALSE) {
+
                 $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible" role="alert">
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<strong>Username atau Password salah!</strong> </div>');
@@ -61,6 +63,8 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('username', 'username', 'required');
         $this->form_validation->set_rules('password', 'password', 'required');
     }
+
+
 
 
     public function logout()

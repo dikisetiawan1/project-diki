@@ -52,13 +52,13 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fa fa-fw fa-list"></i>
-            <span>Transaksi barang </span>
+            <span>Proses barang </span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Data transaksi</h6>
-                <a class="collapse-item" href="<?= base_url("admin/transaksibarangmasuk"); ?>">Transaksi barang masuk</a>
-                <a class="collapse-item" href="<?= base_url("admin/transaksibarangkeluar"); ?>">Transaksi barang keluar</a>
+                <h6 class="collapse-header">Data proses barang</h6>
+                <a class="collapse-item" href="<?= base_url("admin/transaksibarangmasuk"); ?>">barang masuk</a>
+                <a class="collapse-item" href="<?= base_url("admin/transaksibarangkeluar"); ?>">barang keluar</a>
             </div>
         </div>
 
@@ -104,10 +104,10 @@
 
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url('admin/ubahPassword') ?>" data-target="#collapsePages" aria-expanded="true" aria-controls="">
-            <a class="nav-link" href="<?= base_url('welcome/logout') ?>">
-                <i class="fa fa-fw fa-unlock"></i>
-                <span>Ubah password</span>
-            </a>
+
+            <i class="fa fa-fw fa-unlock"></i>
+            <span>Ubah password</span>
+        </a>
 
 
 

@@ -49,15 +49,15 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Password</label>
-                                            <input type="password" name="password" class="form-control form-control-user" id="" placeholder="Password">
+                                            <input type="password" name="password" class="form-control form-control-user" id="" placeholder="Password..">
                                             <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
                                         </div>
                                         <div class="mb-3">
                                             <label>User akses</label>
-                                            <select class="form-control " name="">
+                                            <select class="form-control " name="akses">
                                                 <option>--Pilih user--</option>
-                                                <option>Admin</option>
-                                                <option>Manajer</option>
+                                                <option value="1">Admin</option>
+                                                <option value="2">Manajer</option>
                                             </select>
 
                                         </div>
@@ -66,9 +66,6 @@
 
                                     </form>
                                     <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
-                                    </div>
 
                                 </div>
                             </div>

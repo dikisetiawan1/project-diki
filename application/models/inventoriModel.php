@@ -23,7 +23,7 @@ class InventoriModel extends CI_Model
     }
     public function get_datasum()
     {
-        return $this->db->query("SELECT sum(stok_masuk) AS total_stok, sum(hrg_brg) AS total_harga FROM tbl_barang_masuk");
+        return $this->db->query("SELECT sum(stok_masuk) AS total_stok, sum(hrg_barang) AS total_harga FROM tbl_barang_masuk");
     }
     public function get_datasum2()
     {
@@ -92,7 +92,7 @@ class InventoriModel extends CI_Model
             $this->db->like('nama_brg', $keyword);
         }
 
-        $this->db->select('id_barang,stok_brg, nama_brg,hrg_brg,nama_kategori');
+        $this->db->select('id_barang,stok_brg, nama_brg,hrg_brg,nama_kategori,satuan');
         $this->db->from('tbl_data_barang');
         $this->db->join('tbl_kategori', 'tbl_kategori.id_kategori=tbl_data_barang.id_kategori');
         $this->db->limit($limit, $start);
@@ -171,7 +171,7 @@ class InventoriModel extends CI_Model
             $this->db->like('nama_brg', $keyword);
         }
 
-        $this->db->select('stok_brg,nama_brg,hrg_brg,nama_kategori');
+        $this->db->select('id_barang,stok_brg,nama_brg,hrg_brg,nama_kategori');
         $this->db->from('tbl_data_barang');
         $this->db->join('tbl_kategori', 'tbl_kategori.id_kategori=tbl_data_barang.id_kategori');
         $where = "stok_brg <= '0'";
@@ -193,7 +193,7 @@ class InventoriModel extends CI_Model
             $this->db->like('nama_brg', $keyword);
         }
 
-        $this->db->select('stok_brg,nama_brg,hrg_brg,nama_kategori');
+        $this->db->select('id_barang,   stok_brg,nama_brg,hrg_brg,nama_kategori');
         $this->db->from('tbl_data_barang');
         $this->db->join('tbl_kategori', 'tbl_kategori.id_kategori=tbl_data_barang.id_kategori');
         $where = "stok_brg > '0'";

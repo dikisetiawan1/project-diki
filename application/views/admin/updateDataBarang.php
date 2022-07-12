@@ -51,6 +51,11 @@
                             <input type="text" class="form-control" id="hrg_brg" name="hrg_brg" placeholder="Input harga barang" value="<?= $b->hrg_brg ?>">
 
                         </div>
+                        <div class="mb-3">
+                            <label for="kodeBarang" class="form-label">Satuan</label>
+                            <input type="text" class="form-control" id="satuan" name="satuan" placeholder="Input harga barang" value="<?= $b->satuan ?>">
+
+                        </div>
 
 
                         <div class="modal-footer">

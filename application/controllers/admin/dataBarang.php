@@ -115,7 +115,7 @@ class Databarang extends CI_Controller
     public function updateData($id)
     {
         $where = array('id_barang' => $id);
-        $data['barang'] = $this->db->query("SELECT tbl_data_barang.id_barang,tbl_data_barang.stok_brg, tbl_data_barang.nama_brg,tbl_data_barang.hrg_brg,tbl_kategori.nama_kategori
+        $data['barang'] = $this->db->query("SELECT tbl_data_barang.satuan,tbl_data_barang.id_barang,tbl_data_barang.stok_brg, tbl_data_barang.nama_brg,tbl_data_barang.hrg_brg,tbl_kategori.nama_kategori
 
         FROM tbl_data_barang
 
@@ -145,6 +145,7 @@ class Databarang extends CI_Controller
             $nama_brg = $this->input->post('nama_brg');
             $id_kategori = $this->input->post('id_kategori');
             $hrg_brg = $this->input->post('hrg_brg');
+            $satuan = $this->input->post('satuan');
 
 
 
@@ -154,6 +155,7 @@ class Databarang extends CI_Controller
                 'nama_brg' => $nama_brg,
                 'id_kategori' => $id_kategori,
                 'hrg_brg' => $hrg_brg,
+                'satuan' => $satuan,
 
 
             );
@@ -177,6 +179,7 @@ class Databarang extends CI_Controller
         $this->form_validation->set_rules('id_barang', 'kode barang', 'required');
         $this->form_validation->set_rules('id_kategori', 'kategori', 'required');
         $this->form_validation->set_rules('hrg_brg', 'harga barang', 'required');
+        $this->form_validation->set_rules('satuan', 'satuan', 'required');
     }
     public function deleteData($id)
     {
@@ -187,7 +190,7 @@ class Databarang extends CI_Controller
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <strong>Success!</strong> Data berhasil di Hapus!
       </div>');
-        redirect('admin/dataJabatan');
+        redirect('admin/databarang');
     }
 
 

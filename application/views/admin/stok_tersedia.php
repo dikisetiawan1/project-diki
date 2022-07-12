@@ -11,9 +11,8 @@
         <div class="col-12">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Library</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Data</li>
+                    <li class="breadcrumb-item"><a href="<?= base_url('admin/dashboard') ?>">Home</a></li>
+                    <li class="breadcrumb-item  active" aria-current="page">Data</li>
                 </ol>
             </nav>
         </div>
@@ -26,7 +25,7 @@
     <div class="row">
         <div class="col-8">
 
-            <a href="<?= base_url('manajer/stokBarang/cetakData2') ?>" class="btn btn-warning mb-2 p-3"><i class="fas fa-print"></i></a>
+            <a href="<?= base_url('admin/stokBarang/cetakData2') ?>" class="btn btn-warning mb-2 p-3"><i class="fas fa-print"></i></a>
         </div>
 
         <div class="col-4">
@@ -57,7 +56,7 @@
 
                     <td>
 
-                        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-placement="top" title="Detail data"><i class="fa fa-fw fa-info-circle"></i></i>
+                        <a href="<?= base_url('admin/stokbarang/details2/' . $s['id_barang']) ?>" class="btn btn-success" data-placement="top" title="Detail data"><i class="fa fa-fw fa-info-circle"></i></i>
                     </td>
 
                 </tr>

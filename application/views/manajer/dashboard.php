@@ -11,15 +11,14 @@
         <div class="col-12">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#"><?= $scrumb; ?></a></li>
-                    <li class="breadcrumb-item"><a href="#"><?= $function; ?></a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Data</li>
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Data</a></li>
                 </ol>
             </nav>
         </div>
     </div>
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Dashboard</h1>
+    <h1 class="h3 mb-4 text-gray-800">Dashboard Manajer</h1>
 
     <!-- Content Row -->
     <div class="row">

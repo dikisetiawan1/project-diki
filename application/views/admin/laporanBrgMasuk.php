@@ -11,9 +11,8 @@
         <div class="col-12">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Laporan</a></li>
-                    <li class="breadcrumb-item"><a href="#">Index</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Data</li>
+                    <li class="breadcrumb-item"><a href="<?= base_url('admin/dashboard') ?>">Home</a></li>
+                    <li class="breadcrumb-item  active" aria-current="page">Laporan</li>
                 </ol>
             </nav>
         </div>

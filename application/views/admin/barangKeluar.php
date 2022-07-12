@@ -11,9 +11,8 @@
         <div class="col-12">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Barang Keluar</a></li>
-                    <li class="breadcrumb-item"><a href="#">Index</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Data</li>
+                    <li class="breadcrumb-item"><a href="<?= base_url('admin/dashboard') ?>">Home</a></li>
+                    <li class="breadcrumb-item active " aria-current="page">Data</li>
                 </ol>
             </nav>
         </div>
@@ -65,9 +64,8 @@
                     <td><?= $bk['unit'] ?></td>
                     <td><?= $bk['stok_keluar'] ?></td>
                     <td>
-                        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-placement="top" title="Detail data"><i class="fa fa-fw fa-info-circle"></i></i></a>
-                        <a onclick=" return confirm('yakin di hapus?')" href="<?= base_url('admin/transaksibarangkeluar/deleteData/' . $bk['id_brgKeluar']) ?>" class="btn btn-danger"><i class="fa fa-fw fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Hapus data"></i></a>
-                    </td>
+                        <a href="<?= base_url('admin/transaksibarangkeluar/details/' . $bk['id_brgKeluar']) ?>" class="btn btn-success" data-placement="top" title="Detail data"><i class="fa fa-fw fa-info-circle"></i></i>
+
                 </tr>
             <?php endforeach; ?>
         </table>
@@ -91,7 +89,7 @@
                     <!-- heading modal -->
                     <div class="modal-header">
 
-                        <h4 class="modal-title">Form Tambah transaksi penjualan</h4>
+                        <h4 class="modal-title">Form Tambah Barang Keluar</h4>
                     </div>
                     <!-- body modal -->
                     <div class="modal-body">
@@ -166,27 +164,6 @@
                         </form>
                     </div>
                     <!-- footer modal -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End modal Detail-->
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <a href="#" type="submit" class="btn btn-danger">Print</a>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

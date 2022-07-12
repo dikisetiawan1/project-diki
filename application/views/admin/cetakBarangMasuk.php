@@ -42,7 +42,7 @@
                             <td><?= $bm->tgl_masuk ?></td>
                             <td><?= $bm->nama_supplier ?></td>
                             <td class="text-center"><?= $bm->stok_masuk ?></td>
-                            <td> Rp.<?= number_format($bm->hrg_brg, 0, ',', '.') ?></td>
+                            <td> Rp.<?= number_format($bm->hrg_barang, 0, ',', '.') ?></td>
                         </tr>
                     <?php endforeach; ?>
 

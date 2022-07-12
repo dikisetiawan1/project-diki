@@ -11,8 +11,7 @@
         <div class="col-12">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Master barang</a></li>
-                    <li class="breadcrumb-item"><a href="#">Index</a></li>
+                    <li class="breadcrumb-item"><a href="<?= base_url('admin/dashboard') ?>">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Data</li>
                 </ol>
             </nav>
@@ -25,7 +24,7 @@
     <!-- Content Row -->
     <div class="row">
         <div class="col-8">
-            <a href="<?= base_url('admin/barangmasuk/tambah') ?>" class="btn btn-primary mb-2" data-toggle="modal" data-target="#myModal">Tambah data </a>
+
             <a href=" <?= base_url('admin/dataBarang/cetakData') ?>" class="btn btn-warning mb-2 ml-1 pt-2 pb-3"><i class="fas fa-print"></i></a>
             <a href="#" class="btn btn-success mb-2 ml-1 pt-2 pb-3 "><i class="fas fa-file-excel"></i></a>
         </div>
@@ -47,10 +46,12 @@
         <table class="table table-hover card-shadow">
             <tr class="bg-secondary text-white rounded">
                 <td>#</td>
+                <td>Kd Barang</td>
                 <td>Nama barang</td>
                 <td>Kategori</td>
                 <td>Harga barang</td>
                 <td>Stok</td>
+                <td>Satuan</td>
                 <td>Aksi</td>
             </tr>
             <?php $no = 1;
@@ -59,13 +60,16 @@
 
                 <tr>
                     <td><?= ++$start; ?></td>
+                    <td><?= $br['id_barang']; ?></td>
                     <td><?= $br['nama_brg']; ?></td>
                     <td><?= $br['nama_kategori']; ?></td>
                     <td><?= $br['hrg_brg']; ?></td>
                     <td><?= $br['stok_brg']; ?></td>
+                    <td><?= $br['satuan']; ?></td>
 
 
                     <td>
+
                         <a href="<?= base_url('admin/dataBarang/updateData/' . $br['id_barang']) ?>" class="btn btn-primary" data-placement="top" title="Edit data"><i class="fas fa-fw fa-edit"></i></a>
                         <a onclick=" return confirm('yakin di hapus?')" href="<?= base_url('admin/databarang/deleteData/' .  $br['id_barang']) ?>" class="btn btn-danger"><i class="fa fa-fw fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Hapus data"></i></a>
                     </td>
@@ -144,7 +148,8 @@
         </div>
 
 
-        <!-- modal edit-->
+
+
 
 
     </div>

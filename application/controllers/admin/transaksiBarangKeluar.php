@@ -15,7 +15,7 @@ class Transaksibarangkeluar extends CI_Controller
     }
     public function index()
     {
-        $data['title'] = "Transaksi Barang keluar";
+        $data['title'] = "Barang keluar";
         $this->load->model('inventoriModel');
         $this->load->library('pagination');
 
@@ -132,5 +132,23 @@ class Transaksibarangkeluar extends CI_Controller
         $this->load->view('templates_admin/header');
 
         $this->load->view('admin/cetakBarangKeluar', $data);
+    }
+    public function details($id)
+    {
+        $where = array('id_brgKeluar' => $id);
+        $this->load->model('inventoriModel');
+        $data['detail'] = $this->db->query("SELECT tbl_barang_keluar.id_brgKeluar,tbl_data_barang.nama_brg,tbl_barang_keluar.tanggal_keluar,tbl_barang_keluar.cabang,tbl_barang_keluar.unit,tbl_barang_keluar.stok_keluar,tbl_barang_keluar.harga_brg
+        FROM tbl_barang_keluar
+        INNER JOIN tbl_data_barang ON tbl_barang_keluar.id_barang = tbl_data_barang.id_barang
+        WHERE id_brgKeluar= '$id'
+        ")->result();
+
+
+        $data['title'] = "Detail data barang";
+        $this->load->view('templates_admin/header');
+        $this->load->view('templates_admin/sidebar');
+        $this->load->view('templates_admin/topbar');
+        $this->load->view('admin/detailbrgkeluar', $data);
+        $this->load->view('templates_admin/footer');
     }
 }

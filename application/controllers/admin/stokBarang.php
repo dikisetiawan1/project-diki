@@ -148,4 +148,42 @@ class Stokbarang extends CI_Controller
 
         $this->load->view('admin/cetakStokBarang2', $data);
     }
+    public function details($id)
+    {
+        $where = array('id_barang' => $id);
+        $this->load->model('inventoriModel');
+        $data['detail'] = $this->db->query("SELECT tbl_data_barang.id_barang, tbl_data_barang.stok_brg, tbl_data_barang.nama_brg,tbl_data_barang.hrg_brg,tbl_kategori.nama_kategori
+        
+        FROM tbl_data_barang
+        
+        INNER JOIN tbl_kategori ON tbl_data_barang.id_kategori=tbl_kategori.id_kategori
+        WHERE id_barang = '$id'")->result();
+
+
+        $data['title'] = "Detail stok barang";
+        $this->load->view('templates_admin/header');
+        $this->load->view('templates_admin/sidebar');
+        $this->load->view('templates_admin/topbar');
+        $this->load->view('admin/detailstokkosong', $data);
+        $this->load->view('templates_admin/footer');
+    }
+    public function details2($id)
+    {
+        $where = array('id_barang' => $id);
+        $this->load->model('inventoriModel');
+        $data['detail'] = $this->db->query("SELECT tbl_data_barang.id_barang, tbl_data_barang.stok_brg, tbl_data_barang.nama_brg,tbl_data_barang.hrg_brg,tbl_kategori.nama_kategori
+        
+        FROM tbl_data_barang
+        
+        INNER JOIN tbl_kategori ON tbl_data_barang.id_kategori=tbl_kategori.id_kategori
+        WHERE id_barang = '$id'")->result();
+
+
+        $data['title'] = "Detail stok barang";
+        $this->load->view('templates_admin/header');
+        $this->load->view('templates_admin/sidebar');
+        $this->load->view('templates_admin/topbar');
+        $this->load->view('admin/detailstoktersedia', $data);
+        $this->load->view('templates_admin/footer');
+    }
 }
