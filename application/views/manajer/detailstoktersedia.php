@@ -14,8 +14,8 @@
             <div class="col-12">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/dashboard') ?>">Home</a></li>
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/transaksibarangmasuk') ?>">Data</a></li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('manajer/dashboard') ?>">Home</a></li>
+                        <li class="breadcrumb-item"><a href="<?= base_url('manajer/stokbarang/tersedia') ?>">Data</a></li>
                         <li class="breadcrumb-item  active" aria-current="page">Detail</li>
                     </ol>
                 </nav>
@@ -30,19 +30,15 @@
             <div class="row">
                 <div class="col-4 mt-4">
 
-                    <a href="<?= base_url('admin/transaksibarangmasuk') ?>" class="me-4 ">Back<i class="fa fa-fw fa-reply text-gray-300 "></i></a>
+                    <a href="<?= base_url('manajer/stokbarang/tersedia') ?>" class="me-4 ">Back<i class="fa fa-fw fa-reply text-gray-300 "></i></a>
                 </div>
 
-
-
-
-                <div class="col-12">
+                <div class="col-12 ">
 
 
                     <?php foreach ($detail as $d) : ?>
 
                         <table class="table">
-
 
                             <tr>
                                 <td>
@@ -56,46 +52,27 @@
                             <br>
                             <tr>
                                 <td>
-                                    <b> Tanggal masuk</b>
+                                    <b> Kategori</b>
                                 </td>
                                 <td>:</td>
                                 <td>
-                                    <?= $d->tgl_masuk ?>
+                                    <?= $d->nama_kategori ?>
                                 </td>
                             </tr>
                             <br>
                             <tr>
                                 <td>
-                                    <b> Harga barang</b>
+                                    <b> Stok barang</b>
                                 </td>
                                 <td>:</td>
                                 <td>
-                                    <?= $d->hrg_barang ?>
+                                    <?= $d->stok_brg ?>
                                 </td>
                             </tr>
-                            <br>
-                            <tr>
-                                <td>
-                                    <b> Qty</b>
-                                </td>
-                                <td>:</td>
-                                <td>
-                                    <?= $d->stok_masuk ?>
-                                </td>
-                            </tr>
-                            <br>
-                            <tr>
-                                <td>
-                                    <b> Supplier</b>
-                                </td>
-                                <td>:</td>
-                                <td>
-                                    <?= $d->nama_supplier ?>
-                                </td>
-                            </tr>
-                        </table>
-                    <?php endforeach; ?>
 
+                        </table>
+
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>

@@ -167,6 +167,7 @@ class Stokbarang extends CI_Controller
         $this->load->view('admin/detailstokkosong', $data);
         $this->load->view('templates_admin/footer');
     }
+
     public function details2($id)
     {
         $where = array('id_barang' => $id);

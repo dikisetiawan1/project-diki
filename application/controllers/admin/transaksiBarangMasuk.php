@@ -169,11 +169,29 @@ class Transaksibarangmasuk extends CI_Controller
         
         WHERE id_brgMasuk= '$id'")->result();
 
+
         $data['title'] = "Detail data barang";
         $this->load->view('templates_admin/header');
         $this->load->view('templates_admin/sidebar');
         $this->load->view('templates_admin/topbar');
         $this->load->view('admin/detailbrgmsk', $data);
         $this->load->view('templates_admin/footer');
+    }
+    public function details_cetak($id)
+    {
+        $where = array('id_brgMasuk' => $id);
+        $this->load->model('inventoriModel');
+        $data['detail'] = $this->db->query("SELECT tbl_barang_masuk.id_brgMasuk, tbl_barang_masuk.tgl_masuk,tbl_barang_masuk.stok_masuk,tbl_barang_masuk.hrg_barang,tbl_data_barang.nama_brg,tbl_supplier.nama_supplier
+        
+        FROM tbl_barang_masuk
+
+        INNER JOIN tbl_data_barang ON tbl_barang_masuk.id_barang=tbl_data_barang.id_barang
+        INNER JOIN tbl_supplier ON tbl_barang_masuk.id_supplier=tbl_supplier.id_supplier
+        
+        where id_brgMasuk='$id' ")->result();
+
+        $data['title'] = "Kuitansi Barang Masuk";
+        $this->load->view('templates_admin/header');
+        $this->load->view('admin/Cetakdetailbrgmsk', $data);
     }
 }

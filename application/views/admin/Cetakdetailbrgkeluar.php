@@ -1,44 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
+<head>
+    <title><?= $title; ?></title>
+    <style type="text/css">
+        body {
+            font-family: arial;
+            color: black;
+        }
+    </style>
+</head>
 
-
-
-
-<!-- Begin Page Content -->
-<div class="container-fluid justify-content-center ">
-
-    <!-- Begin Page Content -->
-    <div class="container-fluid">
+<body>
+    <div class="container">
         <div class="row">
             <div class="col-12">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/dashboard') ?>">Home</a></li>
-                        <li class="breadcrumb-item"><a href="<?= base_url('admin/transaksibarangkeluar') ?>">Data</a></li>
-                        <li class="breadcrumb-item  active" aria-current="page">Detail</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
 
-        <!-- Page Heading -->
-        <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
+                <center class="mt-5">
+                    <h1>PT PERTIWI RESOURCES</h1>
+                    <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
+                </center>
 
-        <!-- Content Row -->
-        <div class="card mx-auto  shadow d-flex align-items-center " style="height: 60%; width:45%; ">
-            <div class="row">
-                <div class="col-4 mt-4">
-
-                    <a href="<?= base_url('admin/transaksibarangkeluar') ?>" class="me-4 ">Back<i class="fa fa-fw fa-reply text-gray-300 "></i></a>
-                </div>
-
-                <div class="col-12 ">
-
+                <table class="table table-bordered table-striped mt-5">
 
                     <?php foreach ($detail as $d) : ?>
 
                         <table class="table">
+
 
                             <tr>
                                 <td>
@@ -52,7 +40,7 @@
                             <br>
                             <tr>
                                 <td>
-                                    <b> Tanggal masuk</b>
+                                    <b> Tanggal keluar</b>
                                 </td>
                                 <td>:</td>
                                 <td>
@@ -101,10 +89,48 @@
                         </table>
 
                     <?php endforeach; ?>
-                </div>
-            </div>
-        </div>
-        <!-- 
-            
 
+                </table>
+
+                <div class="row mt-5">
+                    <div class="col-6">
+                        <tr>
+                            <th></th>
+                            <th width="200px">
+                                <p>Jakarta, <?= date("d M Y") ?><br>Pemohon</p>
+
+                                <br>
+                                <br>
+                                <br>
+                                <p>___________________________________</p>
+                            </th>
+                        </tr>
+                    </div>
+                    <div class="col-6 text-right">
+                        <tr>
+                            <th></th>
+                            <th width="200px">
+                                <p>Jakarta, <?= date("d M Y") ?><br>Logistik</p>
+
+                                <br>
+                                <br>
+                                <br>
+                                <p>___________________________________</p>
+                            </th>
+                        </tr>
+                    </div>
+                </div>
+
+
+
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+    window.print();
+</script>
+</div>
+</div>
 </div>

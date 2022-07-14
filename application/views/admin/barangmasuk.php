@@ -65,7 +65,9 @@
 
                     <td>
 
-                        <a href="<?= base_url('admin/transaksibarangmasuk/details/' . $bm['id_brgMasuk']) ?>" class="btn btn-success" data-placement="top" title="Detail data"><i class="fa fa-fw fa-info-circle"></i></i>
+                        <a href="<?= base_url('admin/transaksibarangmasuk/details/' . $bm['id_brgMasuk']) ?>" class="btn btn-success ml-1 pt-2 pb-3  me-2" data-placement="top" title="Detail data"><i class="fa fa-fw fa-info-circle"></i></i>
+                            <a href="<?= base_url('admin/transaksibarangmasuk/details_cetak/' . $bm['id_brgMasuk']) ?>" class="btn btn-warning ml-1 pt-2 pb-3  me-2"><i class="fas fa-fw fa-print"></i></a>
+
 
 
                     </td>

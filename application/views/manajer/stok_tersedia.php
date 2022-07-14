@@ -11,8 +11,8 @@
         <div class="col-12">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Data</a></li>
+                    <li class="breadcrumb-item"><a href="<?= base_url('manajer/dashboard') ?>">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Data</li>
                 </ol>
             </nav>
         </div>
@@ -56,7 +56,7 @@
 
                     <td>
 
-                        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#exampleModal" data-placement="top" title="Detail data"><i class="fa fa-fw fa-info-circle"></i></i>
+                        <a href="<?= base_url('manajer/stokbarang/details2/' . $s['id_barang']) ?>" class="btn btn-success" data-placement="top" title="Detail data"><i class="fa fa-fw fa-info-circle"></i></i>
                     </td>
 
                 </tr>

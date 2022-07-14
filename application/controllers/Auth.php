@@ -43,6 +43,7 @@ class Auth extends CI_Controller
                 $this->session->set_userdata('image', $cek->image);
                 $this->session->set_userdata('tgl_masuk', $cek->tgl_masuk);
                 $this->session->set_userdata('jenis_kelamin', $cek->jenis_kelamin);
+                $this->session->set_userdata('id', $cek->id);
 
                 switch ($cek->hak_akses) {
 

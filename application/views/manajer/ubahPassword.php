@@ -24,7 +24,7 @@
             <div class="card shadow p-3">
 
 
-                <form method="post" action="<?= base_url('admin/ubahpassword/ubahpasswordAksi') ?>">
+                <form method="post" action="<?= base_url('manajer/ubahpassword/ubahpasswordAksi') ?>">
 
                     <div class="mb-3">
                         <label class="form-label">New password</label>

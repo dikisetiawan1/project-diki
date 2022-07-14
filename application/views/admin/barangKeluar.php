@@ -64,7 +64,9 @@
                     <td><?= $bk['unit'] ?></td>
                     <td><?= $bk['stok_keluar'] ?></td>
                     <td>
-                        <a href="<?= base_url('admin/transaksibarangkeluar/details/' . $bk['id_brgKeluar']) ?>" class="btn btn-success" data-placement="top" title="Detail data"><i class="fa fa-fw fa-info-circle"></i></i>
+                        <a href="<?= base_url('admin/transaksibarangkeluar/details/' . $bk['id_brgKeluar']) ?>" class="btn btn-success ml-1 pt-2 pb-3  me-2" data-placement="top" title="Detail data"><i class="fa fa-fw fa-info-circle"></i></i>
+                            <a href="<?= base_url('admin/transaksibarangkeluar/details_cetak/' . $bk['id_brgKeluar']) ?>" class="btn btn-warning ml-1 pt-2 pb-3  me-2"><i class="fas fa-fw fa-print"></i></a>
+
 
                 </tr>
             <?php endforeach; ?>

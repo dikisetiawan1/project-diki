@@ -6,7 +6,7 @@ class ubahPassword extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        if ($this->session->userdata('hak_akses') != '1') {
+        if ($this->session->userdata('hak_akses') != '2') {
             $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <strong>Anda belum Login!</strong> </div>');
@@ -18,11 +18,11 @@ class ubahPassword extends CI_Controller
         $data['title'] = "Ubah Password";
 
 
-        $this->load->view('templates_admin/header');
-        $this->load->view('templates_admin/sidebar');
-        $this->load->view('templates_admin/topbar');
-        $this->load->view('admin/ubahPassword', $data);
-        $this->load->view('templates_admin/footer');
+        $this->load->view('templates_manajer/header');
+        $this->load->view('templates_manajer/sidebar');
+        $this->load->view('templates_manajer/topbar');
+        $this->load->view('manajer/ubahPassword', $data);
+        $this->load->view('templates_manajer/footer');
     }
     public function ubahpasswordAksi()
     {
@@ -43,16 +43,16 @@ class ubahPassword extends CI_Controller
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <strong><i class="fa fa-check fa-2x"></i></strong>Password berhasil di ubah!
           </div>');
-            redirect('admin/ubahpassword');
+            redirect('manajer/ubahpassword');
         } else {
             $data['title'] = "Ubah Password";
 
 
-            $this->load->view('templates_admin/header');
-            $this->load->view('templates_admin/sidebar');
-            $this->load->view('templates_admin/topbar');
-            $this->load->view('admin/ubahPassword', $data);
-            $this->load->view('templates_admin/footer');
+            $this->load->view('templates_manajer/header');
+            $this->load->view('templates_manajer/sidebar');
+            $this->load->view('templates_manajer/topbar');
+            $this->load->view('manajer/ubahPassword', $data);
+            $this->load->view('templates_manajer/footer');
         }
     }
 }
