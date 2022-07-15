@@ -137,7 +137,7 @@ class Transaksibarangkeluar extends CI_Controller
     {
         $where = array('id_brgKeluar' => $id);
         $this->load->model('inventoriModel');
-        $data['detail'] = $this->db->query("SELECT tbl_barang_keluar.id_brgKeluar,tbl_data_barang.nama_brg,tbl_barang_keluar.tanggal_keluar,tbl_barang_keluar.cabang,tbl_barang_keluar.unit,tbl_barang_keluar.stok_keluar,tbl_barang_keluar.harga_brg
+        $data['detail'] = $this->db->query("SELECT tbl_barang_keluar.id_barang, tbl_barang_keluar.id_brgKeluar,tbl_data_barang.nama_brg,tbl_barang_keluar.tanggal_keluar,tbl_barang_keluar.cabang,tbl_barang_keluar.unit,tbl_barang_keluar.stok_keluar,tbl_barang_keluar.harga_brg
         FROM tbl_barang_keluar
         INNER JOIN tbl_data_barang ON tbl_barang_keluar.id_barang = tbl_data_barang.id_barang
         WHERE id_brgKeluar= '$id'
@@ -155,7 +155,7 @@ class Transaksibarangkeluar extends CI_Controller
     {
         $where = array('id_brgKeluar' => $id);
         $this->load->model('inventoriModel');
-        $data['detail'] = $this->db->query("SELECT tbl_barang_keluar.id_brgKeluar,tbl_data_barang.nama_brg,tbl_barang_keluar.tanggal_keluar,tbl_barang_keluar.cabang,tbl_barang_keluar.unit,tbl_barang_keluar.stok_keluar,tbl_barang_keluar.harga_brg
+        $data['detail'] = $this->db->query("SELECT tbl_barang_keluar.id_barang, tbl_barang_keluar.id_brgKeluar,tbl_data_barang.nama_brg,tbl_barang_keluar.tanggal_keluar,tbl_barang_keluar.cabang,tbl_barang_keluar.unit,tbl_barang_keluar.stok_keluar,tbl_barang_keluar.harga_brg
         FROM tbl_barang_keluar
         INNER JOIN tbl_data_barang ON tbl_barang_keluar.id_barang = tbl_data_barang.id_barang
         WHERE id_brgKeluar= '$id'

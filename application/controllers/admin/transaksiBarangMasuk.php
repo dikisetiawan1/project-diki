@@ -160,7 +160,7 @@ class Transaksibarangmasuk extends CI_Controller
     {
         $where = array('id_brgMasuk' => $id);
         $this->load->model('inventoriModel');
-        $data['detail'] = $this->db->query("SELECT tbl_barang_masuk.id_brgMasuk, tbl_barang_masuk.tgl_masuk,tbl_barang_masuk.stok_masuk,tbl_barang_masuk.hrg_barang,tbl_data_barang.nama_brg,tbl_supplier.nama_supplier
+        $data['detail'] = $this->db->query("SELECT tbl_barang_masuk.id_barang,tbl_barang_masuk.id_brgMasuk, tbl_barang_masuk.tgl_masuk,tbl_barang_masuk.stok_masuk,tbl_barang_masuk.hrg_barang,tbl_data_barang.nama_brg,tbl_supplier.nama_supplier
         
         FROM tbl_barang_masuk
 
@@ -181,7 +181,7 @@ class Transaksibarangmasuk extends CI_Controller
     {
         $where = array('id_brgMasuk' => $id);
         $this->load->model('inventoriModel');
-        $data['detail'] = $this->db->query("SELECT tbl_barang_masuk.id_brgMasuk, tbl_barang_masuk.tgl_masuk,tbl_barang_masuk.stok_masuk,tbl_barang_masuk.hrg_barang,tbl_data_barang.nama_brg,tbl_supplier.nama_supplier
+        $data['detail'] = $this->db->query("SELECT tbl_barang_masuk.id_barang, tbl_barang_masuk.id_brgMasuk, tbl_barang_masuk.tgl_masuk,tbl_barang_masuk.stok_masuk,tbl_barang_masuk.hrg_barang,tbl_data_barang.nama_brg,tbl_supplier.nama_supplier
         
         FROM tbl_barang_masuk
 

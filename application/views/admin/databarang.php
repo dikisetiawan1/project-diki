@@ -24,9 +24,9 @@
     <!-- Content Row -->
     <div class="row">
         <div class="col-8">
-
+            <a href="#" class="btn btn-primary mb-2" data-toggle="modal" data-target="#myModal">Tambah data</a>
             <a href=" <?= base_url('admin/dataBarang/cetakData') ?>" class="btn btn-warning mb-2 ml-1 pt-2 pb-3"><i class="fas fa-print"></i></a>
-            <a href="#" class="btn btn-success mb-2 ml-1 pt-2 pb-3 "><i class="fas fa-file-excel"></i></a>
+
         </div>
 
         <div class="col-4">
@@ -49,7 +49,6 @@
                 <td>Kd Barang</td>
                 <td>Nama barang</td>
                 <td>Kategori</td>
-                <td>Harga barang</td>
                 <td>Stok</td>
                 <td>Satuan</td>
                 <td>Aksi</td>
@@ -63,7 +62,6 @@
                     <td><?= $br['id_barang']; ?></td>
                     <td><?= $br['nama_brg']; ?></td>
                     <td><?= $br['nama_kategori']; ?></td>
-                    <td><?= $br['hrg_brg']; ?></td>
                     <td><?= $br['stok_brg']; ?></td>
                     <td><?= $br['satuan']; ?></td>
 
@@ -129,8 +127,8 @@
                                 <?= form_error('id_kategori', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                             <div class="mb-3">
-                                <label for="kodeBarang" class="form-label">Harga Barang</label>
-                                <input type="text" class="form-control" id="hrg_brg" name="hrg_brg" placeholder="Input harga barang">
+                                <label for="kodeBarang" class="form-label">Satuan</label>
+                                <input type="text" class="form-control" id="satuan" name="satuan" placeholder="Input harga barang">
                                 <?= form_error('hrg_brg', '<small class="text-danger pl-3">', '</small>'); ?>
 
                             </div>

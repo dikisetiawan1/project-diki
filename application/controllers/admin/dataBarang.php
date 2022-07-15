@@ -66,7 +66,7 @@ class Databarang extends CI_Controller
         $data['start'] = $this->uri->segment(4);
         $data['barang'] = $this->inventoriModel->get_brg($config['per_page'], $data['start'], $data['keyword']);
 
-
+        $data['value_kat'] = $this->inventoriModel->get_data('tbl_kategori')->result();
 
         $this->load->view('templates_admin/header');
         $this->load->view('templates_admin/sidebar');
@@ -86,7 +86,7 @@ class Databarang extends CI_Controller
             $id_barang = $this->input->post('id_barang');
             $nama_brg = $this->input->post('nama_brg');
             $id_kategori = $this->input->post('id_kategori');
-            $hrg_brg = $this->input->post('hrg_brg');
+            $satuan = $this->input->post('satuan');
 
 
 
@@ -95,7 +95,7 @@ class Databarang extends CI_Controller
                 'id_barang' => $id_barang,
                 'nama_brg' => $nama_brg,
                 'id_kategori' => $id_kategori,
-                'hrg_brg' => $hrg_brg,
+                'satuan' => $satuan,
 
 
 
@@ -144,7 +144,6 @@ class Databarang extends CI_Controller
             $id = $this->input->post('id_barang');
             $nama_brg = $this->input->post('nama_brg');
             $id_kategori = $this->input->post('id_kategori');
-            $hrg_brg = $this->input->post('hrg_brg');
             $satuan = $this->input->post('satuan');
 
 
@@ -154,7 +153,6 @@ class Databarang extends CI_Controller
 
                 'nama_brg' => $nama_brg,
                 'id_kategori' => $id_kategori,
-                'hrg_brg' => $hrg_brg,
                 'satuan' => $satuan,
 
 
@@ -176,9 +174,7 @@ class Databarang extends CI_Controller
     {
 
         $this->form_validation->set_rules('nama_brg', 'nama barang', 'required');
-        $this->form_validation->set_rules('id_barang', 'kode barang', 'required');
         $this->form_validation->set_rules('id_kategori', 'kategori', 'required');
-        $this->form_validation->set_rules('hrg_brg', 'harga barang', 'required');
         $this->form_validation->set_rules('satuan', 'satuan', 'required');
     }
     public function deleteData($id)

@@ -77,12 +77,14 @@ class Supplier extends CI_Controller
             $nama_supplier = $this->input->post('nama_supplier');
             $no_tlp = $this->input->post('no_tlp');
             $alamat = $this->input->post('alamat');
+            $perusahaan = $this->input->post('perusahaan');
 
             $data = array(
 
                 'nama_supplier' => $nama_supplier,
                 'no_tlp' => $no_tlp,
-                'alamat' => $alamat
+                'alamat' => $alamat,
+                'perusahaan' => $perusahaan
 
             );
 
@@ -119,13 +121,15 @@ class Supplier extends CI_Controller
             $nama_supplier = $this->input->post('nama_supplier');
             $no_tlp = $this->input->post('no_tlp');
             $alamat = $this->input->post('alamat');
+            $perusahaan = $this->input->post('perusahaan');
 
 
             $data = array(
 
                 'nama_supplier' => $nama_supplier,
                 'no_tlp' => $no_tlp,
-                'alamat' => $alamat
+                'alamat' => $alamat,
+                'perusahaan' => $perusahaan
 
             );
             $where = array(
@@ -147,6 +151,7 @@ class Supplier extends CI_Controller
         $this->form_validation->set_rules('nama_supplier', 'nama supplier', 'required');
         $this->form_validation->set_rules('no_tlp', 'nomor telepone', 'required');
         $this->form_validation->set_rules('alamat', 'alamat', 'required');
+        $this->form_validation->set_rules('perusahaan', 'nama perusahaan', 'required');
     }
     public function deleteData($id)
     {

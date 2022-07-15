@@ -46,6 +46,15 @@
 
                             <tr>
                                 <td>
+                                    <b>Kode Barang</b>
+                                </td>
+                                <td>:</td>
+                                <td>
+                                    <?= $d->id_barang ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
                                     <b>Nama Barang</b>
                                 </td>
                                 <td>:</td>

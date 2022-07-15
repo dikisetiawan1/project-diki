@@ -26,7 +26,7 @@
         <h1 class="h3 mb-4 text-gray-800"><?= $title; ?></h1>
 
         <!-- Content Row -->
-        <div class="card mx-auto  shadow d-flex align-items-center " style="height: 60%; width:45%; ">
+        <div class="card mx-auto  shadow d-flex align-items-center " style="height: 70%; width:45%; ">
             <div class="row">
                 <div class="col-4 mt-4">
 
@@ -40,6 +40,15 @@
 
                         <table class="table">
 
+                            <tr>
+                                <td>
+                                    <b>Kode Barang</b>
+                                </td>
+                                <td>:</td>
+                                <td>
+                                    <?= $d->id_barang ?>
+                                </td>
+                            </tr>
                             <tr>
                                 <td>
                                     <b>Nama Barang</b>

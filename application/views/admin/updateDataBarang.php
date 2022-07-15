@@ -32,29 +32,28 @@
                             <input type="hidden" name="id_barang" class="form-control" value="<?= $b->id_barang ?>">
 
                             <input type="text" class="form-control" id="nama_brg" name="nama_brg" placeholder="Input nama barang" value="<?= $b->nama_brg ?>">
+                            <?= form_error('nama_brg', '<small class="text-danger pl-3">', '</small>'); ?>
 
                         </div>
                         <div class="mb-3">
                             <label>Kategori</label>
                             <select class="form-control " name="id_kategori">
-                                <option>--Pilih kategori--</option>
+                                <?php foreach ($value_kat as $vk) : ?>
+
+                                    <option value="<?= $vk->id_kategori ?>">--Pilih Kategori--</option>
+                                <?php endforeach; ?>
                                 <?php
                                 foreach ($kategori as $k) : ?>
 
                                     <option value="<?= $k->id_kategori ?>"><?= $k->nama_kategori ?></option>
                                 <?php endforeach; ?>
+                                <?= form_error('nama_kategori', '<small class="text-danger pl-3">', '</small>'); ?>
                             </select>
-                            <?= form_error('id_kategori', '<div class="text-small text-danger"></div>') ?>
-                        </div>
-                        <div class="mb-3">
-                            <label for="kodeBarang" class="form-label">Harga barang</label>
-                            <input type="text" class="form-control" id="hrg_brg" name="hrg_brg" placeholder="Input harga barang" value="<?= $b->hrg_brg ?>">
-
                         </div>
                         <div class="mb-3">
                             <label for="kodeBarang" class="form-label">Satuan</label>
                             <input type="text" class="form-control" id="satuan" name="satuan" placeholder="Input harga barang" value="<?= $b->satuan ?>">
-
+                            <?= form_error('satuan', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
 
 

@@ -28,7 +28,7 @@
             <a href="#" class="btn btn-primary mb-2" data-toggle="modal" data-target="#myModal">Tambah data</a>
 
             <a href="<?= base_url('admin/supplier/cetakData') ?>" class="btn btn-warning mb-2 ml-1 pt-2 pb-3"><i class="fas fa-print"></i></a>
-            <a href="#" class="btn btn-success mb-2 ml-1 pt-2 pb-3 "><i class="fas fa-file-excel"></i></a>
+
         </div>
         <div class="col-4">
             <form class="d-flex" action="<?= base_url('admin/supplier'); ?>" method="post">
@@ -43,9 +43,10 @@
         <table class="table table-hover card-shadow">
             <tr class="bg-secondary text-white rounded">
                 <td>No</td>
-                <td>Nama</td>
+                <td>Nama Supplier</td>
                 <td>No.Tlp</td>
-                <td>Alamat</td>
+                <td>Alamat Perusahaan</td>
+                <td>Nama Perusahaan</td>
                 <td>Aksi</td>
             </tr>
             <?php
@@ -55,6 +56,7 @@
                     <td><?= $su['nama_supplier']; ?></td>
                     <td><?= $su['no_tlp']; ?></td>
                     <td><?= $su['alamat']; ?></td>
+                    <td><?= $su['perusahaan']; ?></td>
                     <td>
                         <a href="<?= base_url('admin/supplier/updateData/' . $su['id_supplier'])  ?>" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Edit data"><i class="fas fa-fw fa-edit"></i></a>
                         <a onclick=" return confirm('yakin di hapus?')" href="<?= base_url('admin/supplier/deleteData/' . $su['id_supplier']) ?>" class="btn btn-danger"><i class="fa fa-fw fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Hapus data"></i></a>
@@ -105,6 +107,11 @@
                                 <label for="jenisBarang" class="form-label">Alamat</label>
                                 <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Input alamat">
                                 <?= form_error('alamat', '<small class="text-danger pl-3">', '</small>'); ?>
+                            </div>
+                            <div class="mb-3">
+                                <label for="jenisBarang" class="form-label">Nama perusahaan</label>
+                                <input type="text" class="form-control" id="perusahaan" name="perusahaan" placeholder="Input alamat">
+                                <?= form_error('perusahaan', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
 
                             <div class="modal-footer">

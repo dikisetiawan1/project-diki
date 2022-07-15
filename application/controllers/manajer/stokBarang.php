@@ -166,7 +166,7 @@ class Stokbarang extends CI_Controller
     {
         $where = array('id_barang' => $id);
         $this->load->model('inventoriModel');
-        $data['detail'] = $this->db->query("SELECT tbl_data_barang.id_barang, tbl_data_barang.stok_brg, tbl_data_barang.nama_brg,tbl_data_barang.hrg_brg,tbl_kategori.nama_kategori
+        $data['detail'] = $this->db->query("SELECT tbl_data_barang.id_barang, tbl_data_barang.id_barang, tbl_data_barang.stok_brg, tbl_data_barang.nama_brg,tbl_data_barang.hrg_brg,tbl_kategori.nama_kategori
         
         FROM tbl_data_barang
         

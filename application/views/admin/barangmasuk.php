@@ -47,7 +47,6 @@
                 <td>#</td>
                 <td>Nama barang</td>
                 <td>Tgl masuk</td>
-                <td>Harga barang</td>
                 <td>Qty</td>
                 <td>Supplier</td>
                 <td>Aksi</td>
@@ -58,7 +57,6 @@
                     <td><?= ++$start; ?></td>
                     <td><?= $bm['nama_brg'] ?></td>
                     <td><?= $bm['tgl_masuk'] ?></td>
-                    <td><?= $bm['hrg_barang'] ?></td>
                     <td><?= $bm['stok_masuk'] ?></td>
                     <td><?= $bm['nama_supplier'] ?></td>
 

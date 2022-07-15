@@ -32,18 +32,26 @@
                             <input type="hidden" name="id_supplier" class="form-control" value="<?= $su->id_supplier ?>">
 
                             <input type="text" class="form-control" id="nama_supplier" name="nama_supplier" placeholder="Input nama barang" value="<?= $su->nama_supplier ?>">
-
+                            <?= form_error('nama_supplier', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
 
 
                         <div class="mb-3">
                             <label for="notel" class="form-label">No. Tlp</label>
                             <input type="text" class="form-control" id="no_tlp" name="no_tlp" placeholder="Input harga barang" value="<?= $su->no_tlp ?>">
+                            <?= form_error('no_tlp', '<small class="text-danger pl-3">', '</small>'); ?>
 
                         </div>
                         <div class="mb-3">
                             <label for="alamat" class="form-label">Alamat</label>
                             <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Input harga barang" value="<?= $su->alamat ?>">
+                            <?= form_error('alamat', '<small class="text-danger pl-3">', '</small>'); ?>
+
+                        </div>
+                        <div class="mb-3">
+                            <label for="alamat" class="form-label">Nama perusahaan</label>
+                            <input type="text" class="form-control" id="perusahaan" name="perusahaan" placeholder="Input harga barang" value="<?= $su->perusahaan ?>">
+                            <?= form_error('perusahaan', '<small class="text-danger pl-3">', '</small>'); ?>
 
                         </div>
 

@@ -4,7 +4,7 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center  " href="index.html">
         <div class="col-lg  mt-5    ">
-
+            <img src="<?= base_url() ?>" alt="">
             <h5 class="mt-3">SILP</h5>
         </div>
 
@@ -98,7 +98,10 @@
     <hr class="sidebar-divider">
 
     <!-- Heading -->
-
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Setting
+    </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
 
