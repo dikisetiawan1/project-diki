@@ -197,7 +197,7 @@ class Users extends CI_Controller
     public function _rules()
     {
         $this->form_validation->set_rules('name', 'nama', 'required');
-        $this->form_validation->set_rules('username', 'Usernama', 'required|trim|is_unique[user.username]', [
+        $this->form_validation->set_rules('username', 'Username', 'required|trim|is_unique[user.username]', [
             'is_unique' => 'Username sudah terdaftar'
         ]);
         $this->form_validation->set_rules('jenis_kelamin', 'jenis kelamin', 'required');
