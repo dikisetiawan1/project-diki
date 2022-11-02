@@ -25,7 +25,7 @@ class Transaksibarangmasuk extends CI_Controller
 
         // config
         $this->load->model('inventoriModel');
-        $config['base_url'] = 'http://localhost/projectSkripsi/admin/transaksibarangmasuk/index';
+        $config['base_url'] = 'http://localhost/project-diki/admin/transaksibarangmasuk/index';
         $config['total_rows'] = $this->inventoriModel->countAllbrgmsk();
         $config['per_page'] = 5;
         // styling pagination

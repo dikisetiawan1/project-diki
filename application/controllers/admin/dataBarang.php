@@ -28,7 +28,7 @@ class Databarang extends CI_Controller
 
         // config
 
-        $config['base_url'] = 'http://localhost/projectSkripsi/admin/databarang/index';
+        $config['base_url'] = 'http://localhost/project-diki/admin/databarang/index';
         $config['total_rows'] = $this->inventoriModel->countAllbrg();
         $config['per_page'] = 4;
 

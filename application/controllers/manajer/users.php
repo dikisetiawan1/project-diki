@@ -22,7 +22,7 @@ class Users extends CI_Controller
 
         // config
 
-        $config['base_url'] = 'http://localhost/projectSkripsi/manajer/users/index';
+        $config['base_url'] = 'http://localhost/project-diki/manajer/users/index';
         $config['total_rows'] = $this->inventoriModel->countAlluser();
         $config['per_page'] = 2;
         // styling pagination

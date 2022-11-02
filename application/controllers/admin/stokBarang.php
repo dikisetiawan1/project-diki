@@ -28,7 +28,7 @@ class Stokbarang extends CI_Controller
 
         // config
 
-        $config['base_url'] = 'http://localhost/projectSkripsi/admin/stokbarang/index';
+        $config['base_url'] = 'http://localhost/project-diki/admin/stokbarang/index';
         $config['total_rows'] = $this->inventoriModel->countAllbrgkosong();
         $config['per_page'] = 2;
         // styling pagination

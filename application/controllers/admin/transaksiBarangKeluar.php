@@ -21,7 +21,7 @@ class Transaksibarangkeluar extends CI_Controller
 
         // config
         $this->load->model('inventoriModel');
-        $config['base_url'] = 'http://localhost/projectSkripsi/admin/transaksibarangkeluar/index';
+        $config['base_url'] = 'http://localhost/project-diki/admin/transaksibarangkeluar/index';
         $config['total_rows'] = $this->inventoriModel->countAllbrgklr();
         $config['per_page'] = 5;
         // styling pagination

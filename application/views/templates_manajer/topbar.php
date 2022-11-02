@@ -11,7 +11,7 @@
             <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                 <i class="fa fa-bars"></i>
             </button>
-            <p style="font-size: 30px;" class="mt-4"><b> PT. PERTIWI RESOURCES</b></p>
+            <p style="font-size: 30px;" class="mt-4"><b> PT. PERTIWI GROUP</b></p>
 
             <!-- Topbar Navbar -->
             <ul class="navbar-nav ml-auto">

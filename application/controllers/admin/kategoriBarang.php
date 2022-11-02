@@ -25,7 +25,7 @@ class Kategoribarang extends CI_Controller
 
         // config
 
-        $config['base_url'] = 'http://localhost/projectSkripsi/admin/kategoribarang/index';
+        $config['base_url'] = 'http://localhost/project-diki/admin/kategoribarang/index';
         $config['total_rows'] = $this->inventoriModel->countAllkat();
         $config['per_page'] = 1;
         // styling pagination
