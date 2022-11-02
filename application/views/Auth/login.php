@@ -37,7 +37,7 @@
                             <div class="col-lg">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-1">PT. PERTIWI RESOURCES</h1>
+                                        <h1 class="h4 text-gray-900 mb-1">PT. PERTIWI GROUP</h1>
                                         <p class="mb-4">Sistem Inventory Logistik Pertiwi</p>
                                     </div>
                                     <?= $this->session->flashdata('pesan') ?>
@@ -53,11 +53,15 @@
                                             <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
                                         </div>
                                         <div class="mb-3">
+
+                                        
                                             <label>User akses</label>
-                                            <select class="form-control " name="akses">
+                                            <select class="form-control " name="hak_akses">
                                                 <option>--Pilih user--</option>
                                                 <option value="1">Admin</option>
                                                 <option value="2">Manajer</option>
+
+                                               
                                             </select>
 
                                         </div>

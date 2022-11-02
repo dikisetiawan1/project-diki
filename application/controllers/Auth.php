@@ -9,8 +9,7 @@ class Auth extends CI_Controller
 
     public function index()
     {
-
-
+     
 
         $this->_rules();
         if ($this->form_validation->run() == FALSE) {
@@ -25,19 +24,21 @@ class Auth extends CI_Controller
 
                 $username = $this->input->post('username'),
                 $password = $this->input->post('password'),
-                $akses = $this->input->post('hak_akses')
+                $hak_akses = $this->input->post('hak_akses')
             );
             $this->load->model('inventoriModel');
-            $cek = $this->inventoriModel->cek_login($username, $password);
+            $cek = $this->inventoriModel->cek_login($username, $password, $hak_akses);
 
 
             if ($cek == FALSE) {
-
+            // jika data yg ada di db tidak sesuaidg yang diinputkan, maka tampilkan pesan kesalahan
                 $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible" role="alert">
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<strong>Username atau Password salah!</strong> </div>');
                 redirect('auth');
             } else {
+
+                // jika datanya benar/sesuai, maka tampilkan
                 $this->session->set_userdata('hak_akses', $cek->hak_akses);
                 $this->session->set_userdata('name', $cek->name);
                 $this->session->set_userdata('image', $cek->image);

@@ -232,14 +232,18 @@ class InventoriModel extends CI_Model
     {
         $username = set_Value('username');
         $password = set_Value('password');
+        $hak_akses = set_Value('hak_akses');
 
         $result = $this->db->where('username', $username)
+            ->where('hak_akses',$hak_akses)
             ->where('password', md5($password))
             ->limit(1)
             ->get('user');
 
         if ($result->num_rows() > 0) {
             return $result->row();
+
+        
         } else {
             return FALSE;
         }
